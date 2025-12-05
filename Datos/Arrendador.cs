@@ -20,7 +20,6 @@ namespace Datos
             this.Espacio = new HashSet<Espacio>();
         }
     
-        public int IdArrendador { get; set; }
         public int IdPersona { get; set; }
     
         public virtual Persona Persona { get; set; }

@@ -21,7 +21,6 @@ namespace Datos
             this.Vehiculo = new HashSet<Vehiculo>();
         }
     
-        public int IdConductor { get; set; }
         public int IdPersona { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

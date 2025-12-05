@@ -34,7 +34,7 @@ namespace Datos
 
             return EjecutarFuncion(bd =>
             {
-                var arrendadorExistente = bd.Arrendador.FirstOrDefault(ar => ar.IdArrendador == a.IdArrendador);
+                var arrendadorExistente = bd.Arrendador.FirstOrDefault(ar => ar.IdPersona == a.IdPersona);
                 if (arrendadorExistente == null)
                 {
                     return "Arrendador no encontrado.";
@@ -52,7 +52,7 @@ namespace Datos
             return EjecutarFuncion(bd =>
             {
                 var existe = bd.Arrendador.Include("Persona")
-                                          .FirstOrDefault(x => x.IdArrendador == idArrendador);
+                                          .FirstOrDefault(x => x.IdPersona == idArrendador);
 
                 if (existe == null)
                     return "Arrendador no encontrado.";
@@ -76,7 +76,7 @@ namespace Datos
             return EjecutarFuncion(bd =>
             {
                 bd.Configuration.LazyLoadingEnabled = false;
-                return bd.Arrendador.Include("Persona").FirstOrDefault(a => a.IdArrendador == idArrendador);
+                return bd.Arrendador.Include("Persona").FirstOrDefault(a => a.IdPersona == idArrendador);
             });
         }
         public List<Espacio> MostrarEspaciosPorArrendador(int idArrendador)

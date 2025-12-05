@@ -34,7 +34,7 @@ namespace Datos
 
             return EjecutarFuncion(bd =>
             {
-                var conductor = bd.Conductor.FirstOrDefault(ar => ar.IdConductor == a.IdConductor);
+                var conductor = bd.Conductor.FirstOrDefault(ar => ar.IdPersona == a.IdPersona);
                 if (conductor == null)
                 {
                     return "Conductor no encontrado.";
@@ -51,8 +51,7 @@ namespace Datos
         {
             return EjecutarFuncion(bd =>
             {
-                var conductor = bd.Conductor.Include("Persona")
-                                          .FirstOrDefault(x => x.IdConductor == idConductor);
+                var conductor = bd.Conductor.Include("Persona").FirstOrDefault(x => x.IdPersona == idConductor);
 
                 if (conductor == null)
                     return "Conductor no encontrado.";
@@ -76,7 +75,7 @@ namespace Datos
             return EjecutarFuncion(bd =>
             {
                 bd.Configuration.LazyLoadingEnabled = false;
-                return bd.Conductor.Include("Persona").FirstOrDefault(a => a.IdConductor == idConductor);
+                return bd.Conductor.Include("Persona").FirstOrDefault(a => a.IdPersona == idConductor);
             });
         }
         public List<Vehiculo> MostraVehiculos(int id)

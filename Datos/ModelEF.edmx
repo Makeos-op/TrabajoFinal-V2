@@ -7,9 +7,8 @@
       <Schema Namespace="ModelEF.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Arrendador">
           <Key>
-            <PropertyRef Name="IdArrendador" />
+            <PropertyRef Name="IdPersona" />
           </Key>
-          <Property Name="IdArrendador" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IdPersona" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Brevete">
@@ -25,9 +24,8 @@
         </EntityType>
         <EntityType Name="Conductor">
           <Key>
-            <PropertyRef Name="IdConductor" />
+            <PropertyRef Name="IdPersona" />
           </Key>
-          <Property Name="IdConductor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IdPersona" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Espacio">
@@ -81,7 +79,7 @@
         </EntityType>
         <Association Name="FK_Arrendador_Persona">
           <End Role="Persona" Type="Self.Persona" Multiplicity="1" />
-          <End Role="Arrendador" Type="Self.Arrendador" Multiplicity="*" />
+          <End Role="Arrendador" Type="Self.Arrendador" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="Persona">
               <PropertyRef Name="IdPersona" />
@@ -96,7 +94,7 @@
           <End Role="Brevete" Type="Self.Brevete" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Conductor">
-              <PropertyRef Name="IdConductor" />
+              <PropertyRef Name="IdPersona" />
             </Principal>
             <Dependent Role="Brevete">
               <PropertyRef Name="IdConductor" />
@@ -105,7 +103,7 @@
         </Association>
         <Association Name="FK_Conductor_Persona">
           <End Role="Persona" Type="Self.Persona" Multiplicity="1" />
-          <End Role="Conductor" Type="Self.Conductor" Multiplicity="*" />
+          <End Role="Conductor" Type="Self.Conductor" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="Persona">
               <PropertyRef Name="IdPersona" />
@@ -120,7 +118,7 @@
           <End Role="Espacio" Type="Self.Espacio" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Arrendador">
-              <PropertyRef Name="IdArrendador" />
+              <PropertyRef Name="IdPersona" />
             </Principal>
             <Dependent Role="Espacio">
               <PropertyRef Name="IdArrendador" />
@@ -156,7 +154,7 @@
           <End Role="Vehiculo" Type="Self.Vehiculo" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Conductor">
-              <PropertyRef Name="IdConductor" />
+              <PropertyRef Name="IdPersona" />
             </Principal>
             <Dependent Role="Vehiculo">
               <PropertyRef Name="IdConductor" />
@@ -207,9 +205,8 @@
       <Schema Namespace="ModelEF" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Arrendador">
           <Key>
-            <PropertyRef Name="IdArrendador" />
+            <PropertyRef Name="IdPersona" />
           </Key>
-          <Property Name="IdArrendador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IdPersona" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Persona" Relationship="Self.FK_Arrendador_Persona" FromRole="Arrendador" ToRole="Persona" />
           <NavigationProperty Name="Espacio" Relationship="Self.FK_Espacio_Arrendador" FromRole="Arrendador" ToRole="Espacio" />
@@ -228,9 +225,8 @@
         </EntityType>
         <EntityType Name="Conductor">
           <Key>
-            <PropertyRef Name="IdConductor" />
+            <PropertyRef Name="IdPersona" />
           </Key>
-          <Property Name="IdConductor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IdPersona" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Brevete" Relationship="Self.FK_Brevete_Conductor" FromRole="Conductor" ToRole="Brevete" />
           <NavigationProperty Name="Persona" Relationship="Self.FK_Conductor_Persona" FromRole="Conductor" ToRole="Persona" />
@@ -295,7 +291,7 @@
         </EntityType>
         <Association Name="FK_Arrendador_Persona">
           <End Role="Persona" Type="Self.Persona" Multiplicity="1" />
-          <End Role="Arrendador" Type="Self.Arrendador" Multiplicity="*" />
+          <End Role="Arrendador" Type="Self.Arrendador" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="Persona">
               <PropertyRef Name="IdPersona" />
@@ -310,7 +306,7 @@
           <End Role="Espacio" Type="Self.Espacio" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Arrendador">
-              <PropertyRef Name="IdArrendador" />
+              <PropertyRef Name="IdPersona" />
             </Principal>
             <Dependent Role="Espacio">
               <PropertyRef Name="IdArrendador" />
@@ -322,7 +318,7 @@
           <End Role="Brevete" Type="Self.Brevete" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Conductor">
-              <PropertyRef Name="IdConductor" />
+              <PropertyRef Name="IdPersona" />
             </Principal>
             <Dependent Role="Brevete">
               <PropertyRef Name="IdConductor" />
@@ -331,7 +327,7 @@
         </Association>
         <Association Name="FK_Conductor_Persona">
           <End Role="Persona" Type="Self.Persona" Multiplicity="1" />
-          <End Role="Conductor" Type="Self.Conductor" Multiplicity="*" />
+          <End Role="Conductor" Type="Self.Conductor" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="Persona">
               <PropertyRef Name="IdPersona" />
@@ -346,7 +342,7 @@
           <End Role="Vehiculo" Type="Self.Vehiculo" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Conductor">
-              <PropertyRef Name="IdConductor" />
+              <PropertyRef Name="IdPersona" />
             </Principal>
             <Dependent Role="Vehiculo">
               <PropertyRef Name="IdConductor" />
@@ -423,7 +419,6 @@
           <EntitySetMapping Name="Arrendador">
             <EntityTypeMapping TypeName="ModelEF.Arrendador">
               <MappingFragment StoreEntitySet="Arrendador">
-                <ScalarProperty Name="IdArrendador" ColumnName="IdArrendador" />
                 <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -443,7 +438,6 @@
           <EntitySetMapping Name="Conductor">
             <EntityTypeMapping TypeName="ModelEF.Conductor">
               <MappingFragment StoreEntitySet="Conductor">
-                <ScalarProperty Name="IdConductor" ColumnName="IdConductor" />
                 <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
               </MappingFragment>
             </EntityTypeMapping>

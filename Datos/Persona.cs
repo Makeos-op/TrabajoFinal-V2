@@ -14,13 +14,6 @@ namespace Datos
     
     public partial class Persona
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Persona()
-        {
-            this.Arrendador = new HashSet<Arrendador>();
-            this.Conductor = new HashSet<Conductor>();
-        }
-    
         public int IdPersona { get; set; }
         public int Dni { get; set; }
         public string Nombres { get; set; }
@@ -33,9 +26,7 @@ namespace Datos
         public string Contrasena { get; set; }
         public string TipoUsuario { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Arrendador> Arrendador { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Conductor> Conductor { get; set; }
+        public virtual Arrendador Arrendador { get; set; }
+        public virtual Conductor Conductor { get; set; }
     }
 }
