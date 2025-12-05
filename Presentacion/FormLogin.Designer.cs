@@ -35,7 +35,7 @@
             this.txtususario = new System.Windows.Forms.TextBox();
             this.txtcontrasenalogin = new System.Windows.Forms.TextBox();
             this.btningresar = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_Salir = new System.Windows.Forms.Button();
             this.btnregistrarse = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -85,7 +85,7 @@
             // txtususario
             // 
             this.txtususario.Location = new System.Drawing.Point(261, 122);
-            this.txtususario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtususario.Margin = new System.Windows.Forms.Padding(4);
             this.txtususario.Name = "txtususario";
             this.txtususario.Size = new System.Drawing.Size(335, 22);
             this.txtususario.TabIndex = 4;
@@ -93,7 +93,7 @@
             // txtcontrasenalogin
             // 
             this.txtcontrasenalogin.Location = new System.Drawing.Point(261, 175);
-            this.txtcontrasenalogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtcontrasenalogin.Margin = new System.Windows.Forms.Padding(4);
             this.txtcontrasenalogin.Name = "txtcontrasenalogin";
             this.txtcontrasenalogin.Size = new System.Drawing.Size(335, 22);
             this.txtcontrasenalogin.TabIndex = 5;
@@ -102,34 +102,37 @@
             // 
             this.btningresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btningresar.Location = new System.Drawing.Point(304, 228);
-            this.btningresar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btningresar.Margin = new System.Windows.Forms.Padding(4);
             this.btningresar.Name = "btningresar";
             this.btningresar.Size = new System.Drawing.Size(139, 28);
             this.btningresar.TabIndex = 6;
             this.btningresar.Text = "INGRESAR";
             this.btningresar.UseVisualStyleBackColor = true;
+            this.btningresar.Click += new System.EventHandler(this.btningresar_Click);
             // 
-            // button2
+            // btn_Salir
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(304, 332);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(139, 28);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "SALIR";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_Salir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Salir.Location = new System.Drawing.Point(304, 332);
+            this.btn_Salir.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Salir.Name = "btn_Salir";
+            this.btn_Salir.Size = new System.Drawing.Size(139, 28);
+            this.btn_Salir.TabIndex = 7;
+            this.btn_Salir.Text = "SALIR";
+            this.btn_Salir.UseVisualStyleBackColor = true;
+            this.btn_Salir.Click += new System.EventHandler(this.btn_Salir_Click);
             // 
             // btnregistrarse
             // 
             this.btnregistrarse.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnregistrarse.Location = new System.Drawing.Point(412, 284);
-            this.btnregistrarse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnregistrarse.Margin = new System.Windows.Forms.Padding(4);
             this.btnregistrarse.Name = "btnregistrarse";
             this.btnregistrarse.Size = new System.Drawing.Size(160, 28);
             this.btnregistrarse.TabIndex = 8;
             this.btnregistrarse.Text = "REGISTRARSE";
             this.btnregistrarse.UseVisualStyleBackColor = true;
+            this.btnregistrarse.Click += new System.EventHandler(this.btnregistrarse_Click);
             // 
             // label5
             // 
@@ -148,7 +151,7 @@
             this.ClientSize = new System.Drawing.Size(791, 395);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnregistrarse);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btn_Salir);
             this.Controls.Add(this.btningresar);
             this.Controls.Add(this.txtcontrasenalogin);
             this.Controls.Add(this.txtususario);
@@ -156,7 +159,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormLogin";
             this.Text = "FormLogin";
             this.ResumeLayout(false);
@@ -173,7 +176,7 @@
         private System.Windows.Forms.TextBox txtususario;
         private System.Windows.Forms.TextBox txtcontrasenalogin;
         private System.Windows.Forms.Button btningresar;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_Salir;
         private System.Windows.Forms.Button btnregistrarse;
         private System.Windows.Forms.Label label5;
     }

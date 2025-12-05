@@ -49,7 +49,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtcontrasena = new System.Windows.Forms.TextBox();
             this.txtcorreo = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_Registrar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -137,7 +137,7 @@
             // txtnombres
             // 
             this.txtnombres.Location = new System.Drawing.Point(235, 85);
-            this.txtnombres.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtnombres.Margin = new System.Windows.Forms.Padding(4);
             this.txtnombres.Name = "txtnombres";
             this.txtnombres.Size = new System.Drawing.Size(148, 22);
             this.txtnombres.TabIndex = 9;
@@ -145,7 +145,7 @@
             // txtdni
             // 
             this.txtdni.Location = new System.Drawing.Point(235, 124);
-            this.txtdni.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtdni.Margin = new System.Windows.Forms.Padding(4);
             this.txtdni.Name = "txtdni";
             this.txtdni.Size = new System.Drawing.Size(148, 22);
             this.txtdni.TabIndex = 11;
@@ -153,7 +153,7 @@
             // txtnacionalidad
             // 
             this.txtnacionalidad.Location = new System.Drawing.Point(563, 124);
-            this.txtnacionalidad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtnacionalidad.Margin = new System.Windows.Forms.Padding(4);
             this.txtnacionalidad.Name = "txtnacionalidad";
             this.txtnacionalidad.Size = new System.Drawing.Size(156, 22);
             this.txtnacionalidad.TabIndex = 12;
@@ -161,7 +161,7 @@
             // txtapellidos
             // 
             this.txtapellidos.Location = new System.Drawing.Point(563, 85);
-            this.txtapellidos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtapellidos.Margin = new System.Windows.Forms.Padding(4);
             this.txtapellidos.Name = "txtapellidos";
             this.txtapellidos.Size = new System.Drawing.Size(156, 22);
             this.txtapellidos.TabIndex = 10;
@@ -169,7 +169,7 @@
             // txtedad
             // 
             this.txtedad.Location = new System.Drawing.Point(235, 166);
-            this.txtedad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtedad.Margin = new System.Windows.Forms.Padding(4);
             this.txtedad.Name = "txtedad";
             this.txtedad.Size = new System.Drawing.Size(148, 22);
             this.txtedad.TabIndex = 13;
@@ -177,7 +177,7 @@
             // txttelefono
             // 
             this.txttelefono.Location = new System.Drawing.Point(563, 166);
-            this.txttelefono.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txttelefono.Margin = new System.Windows.Forms.Padding(4);
             this.txttelefono.Name = "txttelefono";
             this.txttelefono.Size = new System.Drawing.Size(156, 22);
             this.txttelefono.TabIndex = 14;
@@ -185,7 +185,7 @@
             // txtconfirmarcontrasena
             // 
             this.txtconfirmarcontrasena.Location = new System.Drawing.Point(373, 336);
-            this.txtconfirmarcontrasena.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtconfirmarcontrasena.Margin = new System.Windows.Forms.Padding(4);
             this.txtconfirmarcontrasena.Name = "txtconfirmarcontrasena";
             this.txtconfirmarcontrasena.Size = new System.Drawing.Size(331, 22);
             this.txtconfirmarcontrasena.TabIndex = 18;
@@ -207,7 +207,7 @@
             "Arrendador",
             "Conductor"});
             this.cmbtipoususario.Location = new System.Drawing.Point(289, 213);
-            this.cmbtipoususario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbtipoususario.Margin = new System.Windows.Forms.Padding(4);
             this.cmbtipoususario.Name = "cmbtipoususario";
             this.cmbtipoususario.Size = new System.Drawing.Size(160, 24);
             this.cmbtipoususario.TabIndex = 15;
@@ -235,7 +235,7 @@
             // txtcontrasena
             // 
             this.txtcontrasena.Location = new System.Drawing.Point(373, 294);
-            this.txtcontrasena.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtcontrasena.Margin = new System.Windows.Forms.Padding(4);
             this.txtcontrasena.Name = "txtcontrasena";
             this.txtcontrasena.Size = new System.Drawing.Size(331, 22);
             this.txtcontrasena.TabIndex = 17;
@@ -243,28 +243,29 @@
             // txtcorreo
             // 
             this.txtcorreo.Location = new System.Drawing.Point(373, 254);
-            this.txtcorreo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtcorreo.Margin = new System.Windows.Forms.Padding(4);
             this.txtcorreo.Name = "txtcorreo";
             this.txtcorreo.Size = new System.Drawing.Size(331, 22);
             this.txtcorreo.TabIndex = 16;
             // 
-            // button1
+            // btn_Registrar
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(373, 388);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(151, 31);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "REGISTRAR";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_Registrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Registrar.Location = new System.Drawing.Point(373, 388);
+            this.btn_Registrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Registrar.Name = "btn_Registrar";
+            this.btn_Registrar.Size = new System.Drawing.Size(151, 31);
+            this.btn_Registrar.TabIndex = 22;
+            this.btn_Registrar.Text = "REGISTRAR";
+            this.btn_Registrar.UseVisualStyleBackColor = true;
+            this.btn_Registrar.Click += new System.EventHandler(this.btn_Registrar_Click);
             // 
-            // FormRegistrar
+            // FormRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(883, 447);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_Registrar);
             this.Controls.Add(this.txtcorreo);
             this.Controls.Add(this.txtcontrasena);
             this.Controls.Add(this.label11);
@@ -286,8 +287,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "FormRegistrar";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "FormRegistro";
             this.Text = "FormRegistrar";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -317,6 +318,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtcontrasena;
         private System.Windows.Forms.TextBox txtcorreo;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_Registrar;
     }
 }

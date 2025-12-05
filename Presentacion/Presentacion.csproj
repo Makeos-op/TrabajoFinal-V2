@@ -108,6 +108,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMenuArrendador.resx">
+      <DependentUpon>FormMenuArrendador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMenuConductor.resx">
+      <DependentUpon>FormMenuConductor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegistro.resx">
+      <DependentUpon>FormRegistro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegistroBrevete.resx">
+      <DependentUpon>FormRegistroBrevete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegistroVehiculos.resx">
+      <DependentUpon>FormRegistroVehiculos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormReservaArrendador.resx">
       <DependentUpon>FormReservaArrendador.cs</DependentUpon>
     </EmbeddedResource>

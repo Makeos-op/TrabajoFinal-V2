@@ -37,7 +37,7 @@
             this.tbColor = new System.Windows.Forms.TextBox();
             this.tbMarca = new System.Windows.Forms.TextBox();
             this.btnRegistrar = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
+            this.btn_Salir = new System.Windows.Forms.Button();
             this.Licencia = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,106 +46,99 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 76);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(49, 94);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 13);
+            this.label1.Size = new System.Drawing.Size(61, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Matricula";
             // 
             // Modelo
             // 
             this.Modelo.AutoSize = true;
-            this.Modelo.Location = new System.Drawing.Point(37, 109);
-            this.Modelo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Modelo.Location = new System.Drawing.Point(49, 134);
             this.Modelo.Name = "Modelo";
-            this.Modelo.Size = new System.Drawing.Size(42, 13);
+            this.Modelo.Size = new System.Drawing.Size(53, 16);
             this.Modelo.TabIndex = 1;
             this.Modelo.Text = "Modelo";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(37, 167);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(49, 206);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 13);
+            this.label3.Size = new System.Drawing.Size(39, 16);
             this.label3.TabIndex = 3;
             this.label3.Text = "Color";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(37, 138);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(49, 170);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(37, 13);
+            this.label4.Size = new System.Drawing.Size(45, 16);
             this.label4.TabIndex = 2;
             this.label4.Text = "Marca";
             // 
             // tbMatricula
             // 
-            this.tbMatricula.Location = new System.Drawing.Point(98, 70);
-            this.tbMatricula.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbMatricula.Location = new System.Drawing.Point(131, 86);
+            this.tbMatricula.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbMatricula.Name = "tbMatricula";
-            this.tbMatricula.Size = new System.Drawing.Size(137, 20);
+            this.tbMatricula.Size = new System.Drawing.Size(181, 22);
             this.tbMatricula.TabIndex = 4;
             // 
             // tbModelo
             // 
-            this.tbModelo.Location = new System.Drawing.Point(98, 104);
-            this.tbModelo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbModelo.Location = new System.Drawing.Point(131, 128);
+            this.tbModelo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbModelo.Name = "tbModelo";
-            this.tbModelo.Size = new System.Drawing.Size(137, 20);
+            this.tbModelo.Size = new System.Drawing.Size(181, 22);
             this.tbModelo.TabIndex = 5;
             // 
             // tbColor
             // 
-            this.tbColor.Location = new System.Drawing.Point(98, 165);
-            this.tbColor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbColor.Location = new System.Drawing.Point(131, 203);
+            this.tbColor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbColor.Name = "tbColor";
-            this.tbColor.Size = new System.Drawing.Size(137, 20);
+            this.tbColor.Size = new System.Drawing.Size(181, 22);
             this.tbColor.TabIndex = 7;
             // 
             // tbMarca
             // 
-            this.tbMarca.Location = new System.Drawing.Point(98, 135);
-            this.tbMarca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbMarca.Location = new System.Drawing.Point(131, 166);
+            this.tbMarca.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbMarca.Name = "tbMarca";
-            this.tbMarca.Size = new System.Drawing.Size(137, 20);
+            this.tbMarca.Size = new System.Drawing.Size(181, 22);
             this.tbMarca.TabIndex = 6;
             // 
             // btnRegistrar
             // 
             this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrar.Location = new System.Drawing.Point(87, 242);
-            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRegistrar.Location = new System.Drawing.Point(116, 298);
+            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(100, 39);
+            this.btnRegistrar.Size = new System.Drawing.Size(133, 48);
             this.btnRegistrar.TabIndex = 9;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
-            
             // 
-            // btnSalir
+            // btn_Salir
             // 
-            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(87, 294);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(100, 39);
-            this.btnSalir.TabIndex = 10;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            
+            this.btn_Salir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Salir.Location = new System.Drawing.Point(116, 362);
+            this.btn_Salir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Salir.Name = "btn_Salir";
+            this.btn_Salir.Size = new System.Drawing.Size(133, 48);
+            this.btn_Salir.TabIndex = 10;
+            this.btn_Salir.Text = "Salir";
+            this.btn_Salir.UseVisualStyleBackColor = true;
             // 
             // Licencia
             // 
             this.Licencia.AutoSize = true;
-            this.Licencia.Location = new System.Drawing.Point(37, 200);
-            this.Licencia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Licencia.Location = new System.Drawing.Point(49, 246);
             this.Licencia.Name = "Licencia";
-            this.Licencia.Size = new System.Drawing.Size(47, 13);
+            this.Licencia.Size = new System.Drawing.Size(57, 16);
             this.Licencia.TabIndex = 10;
             this.Licencia.Text = "Licencia";
             // 
@@ -162,31 +155,32 @@
             "B-IIa",
             "B-IIb",
             "B-IIc"});
-            this.comboBox1.Location = new System.Drawing.Point(98, 200);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Location = new System.Drawing.Point(131, 246);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(137, 21);
+            this.comboBox1.Size = new System.Drawing.Size(181, 24);
             this.comboBox1.TabIndex = 11;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(51, 26);
+            this.label2.Location = new System.Drawing.Point(68, 32);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(170, 19);
+            this.label2.Size = new System.Drawing.Size(210, 24);
             this.label2.TabIndex = 12;
             this.label2.Text = "Datos de su Vehículo";
             // 
-            // FormVehiculo
+            // FormRegistroVehiculos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(268, 357);
+            this.ClientSize = new System.Drawing.Size(357, 439);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.Licencia);
-            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.btn_Salir);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.tbColor);
             this.Controls.Add(this.tbMarca);
@@ -196,8 +190,8 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.Modelo);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "FormVehiculo";
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "FormRegistroVehiculos";
             this.Text = "FormVehiculo";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -215,7 +209,7 @@
         private System.Windows.Forms.TextBox tbColor;
         private System.Windows.Forms.TextBox tbMarca;
         private System.Windows.Forms.Button btnRegistrar;
-        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btn_Salir;
         private System.Windows.Forms.Label Licencia;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label2;
