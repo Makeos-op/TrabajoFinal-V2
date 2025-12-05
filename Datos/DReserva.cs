@@ -9,34 +9,34 @@ namespace Datos
     public class DReserva:AccesoBD
     {
         //Registro
-        public string Registro(Reserva b)
+        public string Registro(Reserva r)
         {
-            if (b?.Vehiculo==null || b?.Espacio== null)
+            if (r?.Vehiculo==null || r?.Espacio== null)
             {
                 return "El vehiculo y/o reserva no puede ser nulo.";
             }
             return EjecutarFuncion(bd =>
             {
-                bd.Reserva.Add(b);
+                bd.Reserva.Add(r);
                 bd.SaveChanges();
                 return "Reserva registrado correctamente.";
             });
         }
         //Modificar
-        public string Modificar(Reserva b)
+        public string Modificar(Reserva r)
         {
-            if (b?.Vehiculo == null || b?.Espacio == null)
+            if (r?.Vehiculo == null || r?.Espacio == null)
             {
                 return "El vehiculo y/o reserva no puede ser nulo.";
             }
             return EjecutarFuncion(bd =>
             {
-                var reserva = bd.Reserva.Find(b.IdReserva);
+                var reserva = bd.Reserva.Find(r.IdReserva);
                 if (reserva == null)
                 {
                     return "Reserva no encontrada.";
                 }
-                bd.Entry(reserva).CurrentValues.SetValues(b);
+                bd.Entry(reserva).CurrentValues.SetValues(r);
                 bd.SaveChanges();
                 return "Reserva modificado correctamente.";
             });

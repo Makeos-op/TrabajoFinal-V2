@@ -9,6 +9,21 @@ namespace Negocios
 {
     internal class NReserva
     {
-        private DConductor dConductor = new DConductor();
+        private DReserva dReserva = new DReserva();
+        //Registro
+        public string Registro(Reserva r)
+        {
+            return dReserva.Registro(r);
+        }
+        //Modificar
+        public string Modificar(Reserva r)
+        {
+            return dReserva.Modificar(r);
+        }
+        //Eliminar
+        public string Eliminar(int idReserva)
+        {
+            return dReserva.Eliminar(idReserva);
+        }
     }
 }
