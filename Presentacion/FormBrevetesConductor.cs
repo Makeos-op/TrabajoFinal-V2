@@ -16,5 +16,10 @@ namespace Presentacion
         {
             InitializeComponent();
         }
+
+        private void FormBrevetesConductor_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

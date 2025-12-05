@@ -70,10 +70,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(26, 27);
+            this.label4.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.label4.Location = new System.Drawing.Point(29, 29);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(240, 19);
+            this.label4.Size = new System.Drawing.Size(242, 23);
             this.label4.TabIndex = 3;
             this.label4.Text = "Datos de su Espacio a Alquilar";
             // 
@@ -116,15 +117,17 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.OliveDrab;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(92, 218);
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button1.Location = new System.Drawing.Point(85, 218);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(117, 37);
             this.button1.TabIndex = 9;
             this.button1.Text = "Registrar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             // 
-            // FormEspacioArrendador
+            // FormRegistroEspacio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -139,7 +142,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "FormEspacioArrendador";
+            this.Name = "FormRegistroEspacio";
             this.Text = "FormEspacioArrendador";
             this.ResumeLayout(false);
             this.PerformLayout();
