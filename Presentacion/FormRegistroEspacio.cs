@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Datos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,11 @@ namespace Presentacion
 {
     public partial class FormRegistroEspacio : Form
     {
-        public FormRegistroEspacio()
+        private Persona usuario = new Persona();
+        public FormRegistroEspacio(Persona usuarioIngresado)
         {
             InitializeComponent();
+            usuario = usuarioIngresado;
         }
     }
 }

@@ -66,5 +66,5 @@ namespace Presentacion
             };
             //Logica de registro
         }
-    }
+    }   
 }

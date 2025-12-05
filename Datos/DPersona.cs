@@ -35,5 +35,27 @@ namespace Datos
            bd.SaveChanges();
            return "Eliminación Exitosa";
         }
+        public bool Validacion(string correo,string contrasena)
+        {
+            return EjecutarFuncion(bd =>
+            {
+                if (bd.Persona.Any(p => p.Correo == correo && p.Contrasena == contrasena))
+                    return true;
+                return false;
+            });
+        }
+        public Persona ObtenerPersona (string correo, string contrasena)
+        {
+            return EjecutarFuncion(bd =>
+            {
+                if (bd.Persona.Any(p => p.Correo == correo && p.Contrasena == contrasena))
+                {
+                    return bd.Persona.FirstOrDefault(p => p.Correo == correo && p.Contrasena == contrasena);
+                }
+                return null;
+            });
+        } 
+
+
     }
 }

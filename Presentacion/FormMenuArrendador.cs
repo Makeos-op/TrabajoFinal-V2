@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Datos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,20 +13,22 @@ namespace Presentacion
 {
     public partial class FormMenuArrendador : Form
     {
-        public FormMenuArrendador()
+        private Persona usuario = new Persona();
+        public FormMenuArrendador(Persona usuarioIngresado)
         {
             InitializeComponent();
+            usuario = usuarioIngresado;
         }
 
         private void btn_VerReservas_Click(object sender, EventArgs e)
         {
-            FormReservaArrendador form = new FormReservaArrendador();
+            FormReservaArrendador form = new FormReservaArrendador(usuario);
             form.Show();
         }
 
         private void btn_AgregarEspacio_Click(object sender, EventArgs e)
         {
-            FormRegistroEspacio form = new FormRegistroEspacio();
+            FormRegistroEspacio form = new FormRegistroEspacio(usuario);
             form.Show();
         }
 

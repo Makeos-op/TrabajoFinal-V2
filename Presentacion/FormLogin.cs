@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Datos;
+using Negocios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,7 @@ namespace Presentacion
 {
     public partial class FormLogin : Form
     {
+        private NPersona nPersona = new NPersona();
         public FormLogin()
         {
             InitializeComponent();
@@ -48,6 +51,34 @@ namespace Presentacion
             }
             string contrasenaIngresada = txtcontrasenalogin.Text;
             // Aquí iría la lógica para validar el usuario con el servicio correspondiente
+            if (nPersona.Validacion(correoIngresado,contrasenaIngresada))
+            {
+                MessageBox.Show("¡Inicio de sesión exitoso!",
+                                    "Bienvenido",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+                LimpiarCampos();
+                var usuario = nPersona.ObtenerPersona(correoIngresado,contrasenaIngresada);
+                if ( usuario.TipoUsuario== "Conductor")
+                {
+                    FormMenuConductor formConductor = new FormMenuConductor(usuario);
+                    formConductor.Show();
+                }
+                else if (usuario.TipoUsuario == "Arrendador")
+                {
+                    FormMenuArrendador formArrendador = new FormMenuArrendador(usuario);
+                    formArrendador.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Tipo de usuario no válido.",
+                                    "Error",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
+                }
+            }
+            //Limpiar Campos
+            LimpiarCampos();
         }
 
         private void btnregistrarse_Click(object sender, EventArgs e)

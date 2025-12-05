@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Datos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,11 @@ namespace Presentacion
 {
     public partial class FormMenuConductor : Form
     {
-        public FormMenuConductor()
+        private Persona usuario = new Persona();
+        public FormMenuConductor(Persona usuarioingresado)
         {
             InitializeComponent();
+            usuario = usuarioingresado;
         }
 
         private void FormMenuConductor_Load(object sender, EventArgs e)

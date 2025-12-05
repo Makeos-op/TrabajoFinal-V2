@@ -45,6 +45,7 @@
     <Compile Include="NBrevete.cs" />
     <Compile Include="NConductor.cs" />
     <Compile Include="NEspacio.cs" />
+    <Compile Include="NPersona.cs" />
     <Compile Include="NReserva.cs" />
     <Compile Include="NVehiculo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
