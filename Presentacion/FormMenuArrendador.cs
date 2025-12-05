@@ -16,5 +16,22 @@ namespace Presentacion
         {
             InitializeComponent();
         }
+
+        private void btn_VerReservas_Click(object sender, EventArgs e)
+        {
+            FormReservaArrendador form = new FormReservaArrendador();
+            form.Show();
+        }
+
+        private void btn_AgregarEspacio_Click(object sender, EventArgs e)
+        {
+            FormRegistroEspacio form = new FormRegistroEspacio();
+            form.Show();
+        }
+
+        private void btn_Salir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
