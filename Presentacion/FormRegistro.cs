@@ -1,4 +1,5 @@
 ﻿using Datos;
+using Negocios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,8 @@ namespace Presentacion
 {
     public partial class FormRegistro : Form
     {
+        private NArrendador nPersona = new NArrendador();
+        private NConductor nConductor = new NConductor();
         public FormRegistro()
         {
             InitializeComponent();
@@ -65,6 +68,14 @@ namespace Presentacion
                 Saldo = 0
             };
             //Logica de registro
+            if (usuario.TipoUsuario == "Conductor")
+            {
+                nConductor.Registro(usuario);
+            }
+            else if (usuario.TipoUsuario == "Arrendador")
+            {
+                nConductor.Registro(usuario);
+            }
         }
-    }   
+    }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Negocios
 {
-    internal class NArrendador
+    public class NArrendador
     {
         private DArrendador dArrendador = new DArrendador();
         public string Registro(Arrendador a)

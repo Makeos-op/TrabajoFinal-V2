@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Negocios
 {
-    internal class NConductor
+    public class NConductor
     {
         private DConductor dConductor = new DConductor();
         public string Registro(Conductor a)
