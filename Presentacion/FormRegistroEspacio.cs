@@ -13,11 +13,16 @@ namespace Presentacion
 {
     public partial class FormRegistroEspacio : Form
     {
-        private Persona usuario = new Persona();
-        public FormRegistroEspacio(Persona usuarioIngresado)
+        private Arrendador usuario = new Arrendador();
+        public FormRegistroEspacio(Arrendador usuarioIngresado)
         {
             InitializeComponent();
             usuario = usuarioIngresado;
+        }
+
+        private void btn_Registrar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Datos;
+using Negocios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +14,28 @@ namespace Presentacion
 {
     public partial class FormBrevetesConductor : Form
     {
-        public FormBrevetesConductor()
+        private Conductor usuario = new Conductor();
+        public FormBrevetesConductor(Conductor usuarioIngresado)
         {
             InitializeComponent();
+            usuario = usuarioIngresado;
         }
 
-        private void FormBrevetesConductor_Load(object sender, EventArgs e)
+        private void btn_Registrar_Click(object sender, EventArgs e)
         {
+            //Abrir formulario de registro de brevete
+            FormRegistroBrevete form = new FormRegistroBrevete();    //Logica de registro de brevete
+            //Mostrar Datos
+        }
 
+        private void btn_Salir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn_Refrescar_Click(object sender, EventArgs e)
+        {
+            //Mostrar Datos
         }
     }
 }

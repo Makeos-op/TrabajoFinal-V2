@@ -1,4 +1,5 @@
 ﻿using Datos;
+using Negocios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,11 +14,12 @@ namespace Presentacion
 {
     public partial class FormMenuArrendador : Form
     {
-        private Persona usuario = new Persona();
+        private Arrendador usuario = new Arrendador();
+        private NArrendador nArrendador = new NArrendador();
         public FormMenuArrendador(Persona usuarioIngresado)
         {
             InitializeComponent();
-            usuario = usuarioIngresado;
+            usuario = nArrendador.ObtenerPorId(usuarioIngresado.IdPersona);
         }
 
         private void btn_VerReservas_Click(object sender, EventArgs e)

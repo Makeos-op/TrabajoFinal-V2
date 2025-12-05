@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Negocios
 {
-    internal class NBrevete
+    public class NBrevete
     {
         private DBrevete dBrevete = new DBrevete();
         //Registro

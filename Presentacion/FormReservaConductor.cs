@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Datos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,11 @@ namespace Presentacion
 {
     public partial class FormReservaConductor : Form
     {
-        public FormReservaConductor()
+        private Conductor usuario = new Conductor();
+        public FormReservaConductor(Conductor usuarioIngresado)
         {
             InitializeComponent();
+            usuario = usuarioIngresado;
         }
     }
 }

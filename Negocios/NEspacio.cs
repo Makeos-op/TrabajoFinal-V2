@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Negocios
 {
-    internal class NEspacio
+    public class NEspacio
     {
         private DEspacio dEspacio = new DEspacio();
         //Registro

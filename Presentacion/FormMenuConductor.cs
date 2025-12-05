@@ -1,4 +1,5 @@
 ﻿using Datos;
+using Negocios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,16 +14,30 @@ namespace Presentacion
 {
     public partial class FormMenuConductor : Form
     {
-        private Persona usuario = new Persona();
-        public FormMenuConductor(Persona usuarioingresado)
+        private Conductor usuario = new Conductor();
+        private NConductor nConductor = new NConductor();
+        public FormMenuConductor(Persona usuarioIngresado)
         {
             InitializeComponent();
-            usuario = usuarioingresado;
+            usuario = nConductor.ObtenerPorId(usuarioIngresado.IdPersona);
         }
 
-        private void FormMenuConductor_Load(object sender, EventArgs e)
+        private void btn_VerBrevete_Click(object sender, EventArgs e)
         {
+            FormBrevetesConductor form = new FormBrevetesConductor(usuario);
+            form.Show();
+        }
 
+        private void btn_HacerReversas_Click(object sender, EventArgs e)
+        {
+            FormReservaConductor form = new FormReservaConductor(usuario);
+            form.Show();
+        }
+
+        private void btn_AgregarVehiculo_Click(object sender, EventArgs e)
+        {
+            FormRegistroVehiculos form = new FormRegistroVehiculos(usuario);
+            form.Show();
         }
     }
 }

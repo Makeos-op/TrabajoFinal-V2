@@ -36,7 +36,7 @@ namespace Datos
                 {
                     return "Brevete no encontrado.";
                 }
-                bd.Entry(brevete).CurrentValues.SetValues(b);
+                bd.Entry(brevete).CurrentValues.SetValues(b); //Modificar los valores
                 bd.SaveChanges();
                 return "Brevete modificado correctamente.";
             });
