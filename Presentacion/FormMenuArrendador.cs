@@ -84,5 +84,63 @@ namespace Presentacion
             FormReporteArrendador form = new FormReporteArrendador(usuario);
             form.Show();
         }
+        private void btn_GestionarEspacio_Click(object sender, EventArgs e)
+        {
+            if (DgEspacios.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Seleccione un espacio de la lista para gestionarlo.",
+                                "Espacio no seleccionado",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+                return;
+            }
+
+            try
+            {
+                int idEspacio = int.Parse(DgEspacios.SelectedRows[0].Cells["IdEspacio"].Value.ToString());
+                var espacios = nArrendador.MostrarEspacios(usuario.IdPersona);
+                var espacio = espacios.FirstOrDefault(x => x.IdEspacio == idEspacio);
+
+                if (espacio != null)
+                {
+                    FormGestionEspacio form = new FormGestionEspacio(espacio);
+                    if (form.ShowDialog() == DialogResult.OK)
+                    {
+                        CargarEspacios();
+                        MessageBox.Show("Operación completada correctamente.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo encontrar el espacio seleccionado.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
+        private void btn_MiCuenta_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FormGestionUsuario form = new FormGestionUsuario(usuario);
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    usuario = nArrendador.ObtenerPorId(usuario.IdPersona);
+
+                    if (usuario == null)
+                    {
+                        MessageBox.Show("La cuenta ha sido eliminada. Cerrando sesión...");
+                        Application.Restart();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
     }
 }

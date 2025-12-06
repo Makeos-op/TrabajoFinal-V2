@@ -38,6 +38,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btn_Reportes = new System.Windows.Forms.Button();
+            this.btn_GestionarVehiculo = new System.Windows.Forms.Button();
+            this.btn_MiCuenta = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgVehiculos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,7 +86,7 @@
             this.btn_HacerReversas.TabIndex = 27;
             this.btn_HacerReversas.Text = "Hacer Reservas";
             this.btn_HacerReversas.UseVisualStyleBackColor = false;
-            this.btn_HacerReversas.Click += new System.EventHandler(this.btn_HacerReversas_Click);
+            this.btn_HacerReversas.Click += new System.EventHandler(this.btn_HacerReversas_Click_1);
             // 
             // btn_AgregarVehiculo
             // 
@@ -159,6 +161,30 @@
             this.btn_Reportes.UseVisualStyleBackColor = false;
             this.btn_Reportes.Click += new System.EventHandler(this.btn_Reportes_Click);
             // 
+            // btn_GestionarVehiculo
+            // 
+            this.btn_GestionarVehiculo.BackColor = System.Drawing.Color.LightGray;
+            this.btn_GestionarVehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btn_GestionarVehiculo.Location = new System.Drawing.Point(201, 552);
+            this.btn_GestionarVehiculo.Name = "btn_GestionarVehiculo";
+            this.btn_GestionarVehiculo.Size = new System.Drawing.Size(165, 49);
+            this.btn_GestionarVehiculo.TabIndex = 34;
+            this.btn_GestionarVehiculo.Text = "Gestionar Vehículo";
+            this.btn_GestionarVehiculo.UseVisualStyleBackColor = false;
+            this.btn_GestionarVehiculo.Click += new System.EventHandler(this.btn_GestionarVehiculo_Click);
+            // 
+            // btn_MiCuenta
+            // 
+            this.btn_MiCuenta.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btn_MiCuenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btn_MiCuenta.Location = new System.Drawing.Point(377, 98);
+            this.btn_MiCuenta.Name = "btn_MiCuenta";
+            this.btn_MiCuenta.Size = new System.Drawing.Size(165, 35);
+            this.btn_MiCuenta.TabIndex = 35;
+            this.btn_MiCuenta.Text = "Mi Cuenta";
+            this.btn_MiCuenta.UseVisualStyleBackColor = false;
+            this.btn_MiCuenta.Click += new System.EventHandler(this.btn_MiCuenta_Click);
+            // 
             // FormMenuConductor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -174,6 +200,8 @@
             this.Controls.Add(this.btn_AgregarVehiculo);
             this.Controls.Add(this.dgVehiculos);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.btn_GestionarVehiculo);
+            this.Controls.Add(this.btn_MiCuenta);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormMenuConductor";
             this.Text = "FormConductor";
@@ -194,5 +222,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btn_Reportes;
+        private System.Windows.Forms.Button btn_GestionarVehiculo;
+        private System.Windows.Forms.Button btn_MiCuenta;
     }
 }

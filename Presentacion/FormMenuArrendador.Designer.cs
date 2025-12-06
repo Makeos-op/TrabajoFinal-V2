@@ -35,6 +35,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_Reportes = new System.Windows.Forms.Button();
+            this.btn_GestionarEspacio = new System.Windows.Forms.Button();
+            this.btn_MiCuenta = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgEspacios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,7 +47,7 @@
             this.DgEspacios.Margin = new System.Windows.Forms.Padding(4);
             this.DgEspacios.Name = "DgEspacios";
             this.DgEspacios.RowHeadersWidth = 51;
-            this.DgEspacios.Size = new System.Drawing.Size(480, 287);
+            this.DgEspacios.Size = new System.Drawing.Size(505, 287);
             this.DgEspacios.TabIndex = 3;
             // 
             // btn_AgregarEspacio
@@ -65,10 +67,10 @@
             // 
             this.btn_VerReservas.BackColor = System.Drawing.Color.OliveDrab;
             this.btn_VerReservas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_VerReservas.Location = new System.Drawing.Point(373, 468);
+            this.btn_VerReservas.Location = new System.Drawing.Point(379, 468);
             this.btn_VerReservas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_VerReservas.Name = "btn_VerReservas";
-            this.btn_VerReservas.Size = new System.Drawing.Size(136, 49);
+            this.btn_VerReservas.Size = new System.Drawing.Size(155, 49);
             this.btn_VerReservas.TabIndex = 5;
             this.btn_VerReservas.Text = "Ver Reservas";
             this.btn_VerReservas.UseVisualStyleBackColor = false;
@@ -112,7 +114,7 @@
             // 
             this.btn_Reportes.BackColor = System.Drawing.Color.OliveDrab;
             this.btn_Reportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Reportes.Location = new System.Drawing.Point(193, 105);
+            this.btn_Reportes.Location = new System.Drawing.Point(29, 105);
             this.btn_Reportes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Reportes.Name = "btn_Reportes";
             this.btn_Reportes.Size = new System.Drawing.Size(165, 49);
@@ -121,11 +123,35 @@
             this.btn_Reportes.UseVisualStyleBackColor = false;
             this.btn_Reportes.Click += new System.EventHandler(this.btn_Reportes_Click);
             // 
+            // btn_GestionarEspacio
+            // 
+            this.btn_GestionarEspacio.BackColor = System.Drawing.Color.LightGray;
+            this.btn_GestionarEspacio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btn_GestionarEspacio.Location = new System.Drawing.Point(376, 105);
+            this.btn_GestionarEspacio.Name = "btn_GestionarEspacio";
+            this.btn_GestionarEspacio.Size = new System.Drawing.Size(158, 49);
+            this.btn_GestionarEspacio.TabIndex = 34;
+            this.btn_GestionarEspacio.Text = "Gestionar Espacio";
+            this.btn_GestionarEspacio.UseVisualStyleBackColor = false;
+            this.btn_GestionarEspacio.Click += new System.EventHandler(this.btn_GestionarEspacio_Click);
+            // 
+            // btn_MiCuenta
+            // 
+            this.btn_MiCuenta.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btn_MiCuenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btn_MiCuenta.Location = new System.Drawing.Point(205, 105);
+            this.btn_MiCuenta.Name = "btn_MiCuenta";
+            this.btn_MiCuenta.Size = new System.Drawing.Size(165, 49);
+            this.btn_MiCuenta.TabIndex = 35;
+            this.btn_MiCuenta.Text = "Mi Cuenta";
+            this.btn_MiCuenta.UseVisualStyleBackColor = false;
+            this.btn_MiCuenta.Click += new System.EventHandler(this.btn_MiCuenta_Click);
+            // 
             // FormMenuArrendador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(547, 539);
+            this.ClientSize = new System.Drawing.Size(559, 539);
             this.Controls.Add(this.btn_Reportes);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -133,6 +159,8 @@
             this.Controls.Add(this.btn_VerReservas);
             this.Controls.Add(this.btn_AgregarEspacio);
             this.Controls.Add(this.DgEspacios);
+            this.Controls.Add(this.btn_GestionarEspacio);
+            this.Controls.Add(this.btn_MiCuenta);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormMenuArrendador";
             this.Text = "FormArrendador";
@@ -150,5 +178,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_Reportes;
+        private System.Windows.Forms.Button btn_GestionarEspacio;
+        private System.Windows.Forms.Button btn_MiCuenta;
     }
 }

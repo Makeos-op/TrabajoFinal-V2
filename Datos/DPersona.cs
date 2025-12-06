@@ -116,7 +116,7 @@ namespace Datos
             {
                     bd.Configuration.LazyLoadingEnabled = false;
                     var espaciosIds = bd.Espacio.Where(e => e.IdPersona == id).Select(e => e.IdEspacio).ToList();
-                    var reservas = bd.Reserva
+                    var reservas = bd.Reserva 
                         .Include("Espacio")
                         .Include("Vehiculo")
                         .Where(r => espaciosIds.Contains(r.IdEspacio))
@@ -125,6 +125,7 @@ namespace Datos
                     return reservas;
             });
         }
+        //Reportes del sistema
         public List<Reserva> ReservasPorRango(DateTime inicio, DateTime fin, int idConductor)
         {
 

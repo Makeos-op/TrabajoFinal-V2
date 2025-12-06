@@ -31,7 +31,6 @@ namespace Presentacion
                 return;
             }
 
-            // Obtener el conductor completo desde la base de datos
             usuario = nConductor.ObtenerPorId(usuarioIngresado.IdPersona);
 
             if (usuario == null)
@@ -44,7 +43,6 @@ namespace Presentacion
                 return;
             }
 
-            // Cargar vehículos del conductor
             CargarVehiculos();
         }
 
@@ -72,9 +70,9 @@ namespace Presentacion
 
         private void btn_HacerReversas_Click(object sender, EventArgs e)
         {
-            if (dgVehiculos.SelectedRows.Count == 0) //Verifica si hay una fila seleccionada
+            if (dgVehiculos.SelectedRows.Count == 0) 
             {
-                MessageBox.Show("Seleccione un espacio para reservar");
+                MessageBox.Show("Seleccione un vehiculo para hacer la reservar");
                 return;
             }
             var vehiculo = nVehiculo.BuscarPorMatricula(dgVehiculos.SelectedRows[0].Cells["Matricula"].Value.ToString());
@@ -97,6 +95,69 @@ namespace Presentacion
         {
             FormReporteConductor form = new FormReporteConductor(usuario);
             form.Show();
+        }
+        private void btn_GestionarVehiculo_Click(object sender, EventArgs e)
+        {
+            if (dgVehiculos.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Seleccione un vehículo de la lista para gestionarlo.",
+                                "Vehículo no seleccionado",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+                return;
+            }
+
+            try
+            {
+                var matricula = dgVehiculos.SelectedRows[0].Cells["Matricula"].Value.ToString();
+                var vehiculo = nVehiculo.BuscarPorMatricula(matricula);
+
+                if (vehiculo != null)
+                {
+                    FormGestionVehiculo form = new FormGestionVehiculo(vehiculo);
+                    if (form.ShowDialog() == DialogResult.OK)
+                    {
+                        CargarVehiculos(); // Refrescar la lista
+                        MessageBox.Show("Vehículo actualizado correctamente.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo encontrar el vehículo seleccionado.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al gestionar vehículo: {ex.Message}");
+            }
+        }
+
+        private void btn_MiCuenta_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FormGestionUsuario form = new FormGestionUsuario(usuario);
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    // Actualizar datos del usuario
+                    usuario = nConductor.ObtenerPorId(usuario.IdPersona);
+
+                    if (usuario == null)
+                    {
+                        MessageBox.Show("La cuenta ha sido eliminada. Cerrando sesión...");
+                        Application.Restart();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
+        private void btn_HacerReversas_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
