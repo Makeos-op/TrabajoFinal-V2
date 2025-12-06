@@ -14,9 +14,9 @@ namespace Presentacion
 {
     public partial class FormRegistroBrevete : Form
     {
-        private Conductor usuario = new Conductor();
+        private Persona usuario = new Persona();
         private NBrevete nBrevete = new NBrevete();
-        public FormRegistroBrevete(Conductor usuarioIngresado)
+        public FormRegistroBrevete(Persona usuarioIngresado)
         {
             InitializeComponent();
             usuario = usuarioIngresado;
@@ -97,7 +97,7 @@ namespace Presentacion
                 brevete.Categoria = categoria;
                 brevete.FechaCaducidad = fechaCaducidad;
                 brevete.FechaEmision = fechaEmision;
-                brevete.IdConductor = DNI;
+                brevete.IdPersona = usuario.IdPersona;
             }
             if (nBrevete.Registro(brevete)!= "Brevete registrado correctamente.")
             {

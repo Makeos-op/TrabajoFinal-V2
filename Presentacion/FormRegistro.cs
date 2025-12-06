@@ -67,11 +67,18 @@ namespace Presentacion
             };
             if (nPersona.Registro(usuario)!= "Registro Exitoso")
             {
-                
+                MessageBox.Show("Hubo un problema con el registro del usuario. Intente de nuevo",
+                                "Error de registro",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                return;
             }
-                LimpiarCampos();
+            MessageBox.Show("Registro Exitoso",
+                                "Registro",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            LimpiarCampos();
                 Close();
             }
         }
-    }
-}
+    }   

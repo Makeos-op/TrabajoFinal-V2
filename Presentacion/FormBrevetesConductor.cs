@@ -14,8 +14,8 @@ namespace Presentacion
 {
     public partial class FormBrevetesConductor : Form
     {
-        private Conductor usuario = new Conductor();
-        public FormBrevetesConductor(Conductor usuarioIngresado)
+        private Persona usuario = new Persona();
+        public FormBrevetesConductor(Persona usuarioIngresado)
         {
             InitializeComponent();
             usuario = usuarioIngresado;

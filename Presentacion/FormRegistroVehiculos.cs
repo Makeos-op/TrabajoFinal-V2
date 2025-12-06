@@ -14,9 +14,9 @@ namespace Presentacion
 {
     public partial class FormRegistroVehiculos : Form
     {
-        private Conductor usuario = new Conductor();
+        private Persona usuario = new Persona();
         private NVehiculo nVehiculo = new NVehiculo();
-        public FormRegistroVehiculos(Conductor usuarioIngresado)
+        public FormRegistroVehiculos(Persona usuarioIngresado)
         {
             InitializeComponent();
             usuario = usuarioIngresado;
@@ -39,8 +39,7 @@ namespace Presentacion
                 vehiculo.Marca = tbMarca.Text;
                 vehiculo.Color = tbColor.Text;
                 vehiculo.Modelo = tbModelo.Text;
-                vehiculo.Conductor.IdPersona = usuario.IdPersona;
-                vehiculo.LicenciaNecesaria = comboBox1.Text;
+                vehiculo.IdPersona = usuario.IdPersona;
             }
             if (nVehiculo.Registro(vehiculo) != "Vehiculo registrado correctamente.")
             {

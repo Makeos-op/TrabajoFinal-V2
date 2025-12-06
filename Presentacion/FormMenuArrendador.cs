@@ -14,8 +14,8 @@ namespace Presentacion
 {
     public partial class FormMenuArrendador : Form
     {
-        private Arrendador usuario = new Arrendador();
-        private NArrendador nArrendador = new NArrendador();
+        private Persona usuario = new Persona();
+        private NPersona nArrendador = new NPersona();
         public FormMenuArrendador(Persona usuarioIngresado)
         {
             InitializeComponent();
@@ -51,7 +51,7 @@ namespace Presentacion
         {
             try
             {
-                var espacios = nArrendador.MostrarEspaciosPorArrendador(usuario.IdPersona);
+                var espacios = nArrendador.MostrarEspacios(usuario.IdPersona);
                 UiHelper.Mostrar(DgEspacios, espacios);
             }
             catch (Exception ex)

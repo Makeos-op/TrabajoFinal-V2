@@ -14,12 +14,12 @@ namespace Presentacion
 {
     public partial class FormReservaConductor : Form
     {
-        private Conductor usuario = new Conductor();
+        private Persona usuario = new Persona();
         private Vehiculo vehiculo = new Vehiculo();
-        private NConductor nConductor = new NConductor();
+        private NPersona nConductor = new NPersona();
         private NEspacio nEspacio = new NEspacio();
         private NReserva nReserva = new NReserva();
-        public FormReservaConductor(Conductor usuarioIngresado,Vehiculo vehiculoIngresado)
+        public FormReservaConductor(Persona usuarioIngresado,Vehiculo vehiculoIngresado)
         {
             InitializeComponent();
             usuario = usuarioIngresado;

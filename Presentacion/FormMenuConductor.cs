@@ -14,8 +14,8 @@ namespace Presentacion
 {
     public partial class FormMenuConductor : Form
     {
-        private Conductor usuario = new Conductor();
-        private NConductor nConductor = new NConductor();
+        private Persona usuario = new Persona();
+        private NPersona nConductor = new NPersona();
         private NVehiculo nVehiculo = new NVehiculo();
         public FormMenuConductor(Persona usuarioIngresado)
         {

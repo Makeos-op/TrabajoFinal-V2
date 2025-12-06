@@ -14,9 +14,9 @@ namespace Presentacion
 {
     public partial class FormReservaArrendador : Form
     {
-        private Arrendador usuario = new Arrendador();
-        private NArrendador nArrendador = new NArrendador();
-        public FormReservaArrendador(Arrendador usuarioIngresado)
+        private Persona usuario = new Persona();
+        private NPersona nArrendador = new NPersona();
+        public FormReservaArrendador(Persona usuarioIngresado)
         {
             InitializeComponent();
             usuario = usuarioIngresado;

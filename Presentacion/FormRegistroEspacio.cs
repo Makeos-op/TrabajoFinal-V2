@@ -14,9 +14,10 @@ namespace Presentacion
 {
     public partial class FormRegistroEspacio : Form
     {
-        private Arrendador usuario = new Arrendador();
+        private Persona usuario = new Persona();
+        private NPersona nArrendador = new NPersona();
         private NEspacio nEspacio = new NEspacio();
-        public FormRegistroEspacio(Arrendador usuarioIngresado)
+        public FormRegistroEspacio(Persona usuarioIngresado)
         {
             InitializeComponent();
             usuario = usuarioIngresado;
@@ -73,9 +74,8 @@ namespace Presentacion
             }
             Espacio espacio = new Espacio();
             {
-                espacio.IdArrendador = usuario.IdPersona;
+                espacio.IdPersona= usuario.IdPersona;
                 espacio.TarifaHora = tarifa;
-                espacio.Area = areaText;
                 espacio.Ubicacion = ubicacion;
                 espacio.IdEspacio= id;
             }
