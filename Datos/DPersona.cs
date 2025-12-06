@@ -8,32 +8,47 @@ namespace Datos
 {
     public class DPersona:AccesoBD
     {
-        public string Registro(BDEFEntities bd,Persona u)
+        public string Registro(Persona u)
         {
-            bd.Persona.Add(u);
-            bd.SaveChanges();
-            return "Registro Exitoso";
-        }
-        public string Modificar(BDEFEntities bd, Persona u)
-        {
-            var persona = bd.Persona.Find(u.IdPersona);
-            if (persona == null)
+            EjecutarFuncion(bd =>
             {
-                return "Persona no encontrada";
-            }
-            bd.Entry(persona).CurrentValues.SetValues(u);
-            return "Modificación Exitosa";
+                if (bd.Persona.Any(p => p.Correo == u.Correo))
+                {
+                    throw new Exception("El correo ya está registrado.");
+                }
+                bd.Persona.Add(u);
+                bd.SaveChanges();
+                return "Registro Exitoso";
+            });
         }
-        public string Eliminar(BDEFEntities bd, int IdPersona)
+        public string Modificar(Persona u)
         {
-            var persona = bd.Persona.Find(IdPersona);
-            if (persona == null)
+            EjecutarFuncion(bd =>
             {
-                return "Persona no encontrada";
-            }
-           bd.Persona.Remove(persona);
-           bd.SaveChanges();
-           return "Eliminación Exitosa";
+                var persona = bd.Persona.Find(u.IdPersona);
+                if (persona == null)
+                {
+                    throw new Exception("Persona no encontrada");
+                }
+                bd.Entry(persona).CurrentValues.SetValues(u);
+                bd.SaveChanges();
+                return "Modificación Exitosa";
+            });
+        }
+        public string Eliminar(int IdPersona)
+        {
+            return EjecutarFuncion(bd =>
+            {
+                var persona = bd.Persona.Find(IdPersona);
+                if (persona == null)
+                {
+                    return "Persona no encontrada";
+
+                }
+                bd.Persona.Remove(persona);
+                bd.SaveChanges();
+                return "Eliminación Exitosa";
+            });
         }
         public bool Validacion(string correo,string contrasena)
         {
@@ -54,8 +69,56 @@ namespace Datos
                 }
                 return null;
             });
-        } 
-
+        }
+        public List<Persona> Listar()
+        {
+            return EjecutarFuncion(bd =>
+            {
+                bd.Configuration.LazyLoadingEnabled = false;
+                return bd.Conductor.Include("Persona").ToList();
+            });
+        }
+        public Persona ObtenerPorId(int idConductor)
+        {
+            return EjecutarFuncion(bd =>
+            {
+                bd.Configuration.LazyLoadingEnabled = false;
+                return bd.Conductor.Include("Persona").FirstOrDefault(a => a.IdPersona == idConductor);
+            });
+        }
+        public List<Vehiculo> MostraVehiculos(int id)
+        {
+            return EjecutarFuncion(bd =>
+            {
+                bd.Configuration.LazyLoadingEnabled = false;
+                return bd.Vehiculo.Where(v => v.IdConductor == id).ToList();
+            });
+        }
+        public List<Brevete> MostrarBrevetes(int id)
+        {
+            return EjecutarFuncion(bd =>
+            {
+                bd.Configuration.LazyLoadingEnabled = false;
+                return bd.Brevete.Where(b => b.IdConductor == id).ToList();
+            });
+        }
+        public List<Espacio> MostrarEspacios(int idArrendador)
+        {
+            return EjecutarFuncion(bd =>
+            {
+                bd.Configuration.LazyLoadingEnabled = false;
+                return bd.Espacio.Include("Arrendador").Where(e => e.IdArrendador == idArrendador).ToList();
+            });
+        }
+        public List<Reserva> MostrarReservas(int id)
+        {
+            return EjecutarFuncion(bd =>
+            {
+                bd.Configuration.LazyLoadingEnabled = false;
+                var reservas = bd.Reserva.Include("Espacio").Where(r => r.Espacio.IdArrendador == id).ToList();
+                return reservas;
+            });
+        }
 
     }
 }

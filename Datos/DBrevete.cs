@@ -11,7 +11,7 @@ namespace Datos
         //Registro
         public string Registro(Brevete b)
         {
-            if (b?.Conductor == null)
+            if (b == null)
             {
                 return "El conductor no puede ser nulo.";
             }
@@ -25,7 +25,7 @@ namespace Datos
         //Modificar
         public string Modificar(Brevete b)
         {
-            if (b?.Conductor == null)
+            if (b == null)
             {
                 return "El conductor no puede ser nulo.";
             }

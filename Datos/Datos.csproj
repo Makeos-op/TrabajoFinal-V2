@@ -54,18 +54,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoBD.cs" />
-    <Compile Include="Arrendador.cs">
-      <DependentUpon>ModelEF.tt</DependentUpon>
-    </Compile>
     <Compile Include="Brevete.cs">
       <DependentUpon>ModelEF.tt</DependentUpon>
     </Compile>
-    <Compile Include="Conductor.cs">
-      <DependentUpon>ModelEF.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DArrendador.cs" />
     <Compile Include="DBrevete.cs" />
-    <Compile Include="DConductor.cs" />
     <Compile Include="DEspacio.cs" />
     <Compile Include="DReserva.cs" />
     <Compile Include="DPersona.cs" />

@@ -15,12 +15,11 @@ namespace Datos
     public partial class Brevete
     {
         public int IdBrevete { get; set; }
-        public int IdConductor { get; set; }
+        public int IdPersona { get; set; }
         public string Categoria { get; set; }
         public System.DateTime FechaEmision { get; set; }
         public System.DateTime FechaCaducidad { get; set; }
-        public bool Vigencia { get; set; }
     
-        public virtual Conductor Conductor { get; set; }
+        public virtual Persona Persona { get; set; }
     }
 }

@@ -25,9 +25,7 @@ namespace Datos
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Arrendador> Arrendador { get; set; }
         public virtual DbSet<Brevete> Brevete { get; set; }
-        public virtual DbSet<Conductor> Conductor { get; set; }
         public virtual DbSet<Espacio> Espacio { get; set; }
         public virtual DbSet<Persona> Persona { get; set; }
         public virtual DbSet<Reserva> Reserva { get; set; }

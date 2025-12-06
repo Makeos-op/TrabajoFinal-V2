@@ -14,6 +14,14 @@ namespace Datos
     
     public partial class Persona
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Persona()
+        {
+            this.Brevete = new HashSet<Brevete>();
+            this.Espacio = new HashSet<Espacio>();
+            this.Vehiculo = new HashSet<Vehiculo>();
+        }
+    
         public int IdPersona { get; set; }
         public int Dni { get; set; }
         public string Nombres { get; set; }
@@ -22,11 +30,14 @@ namespace Datos
         public string Nacionalidad { get; set; }
         public string Correo { get; set; }
         public string Telefono { get; set; }
-        public decimal Saldo { get; set; }
         public string Contrasena { get; set; }
         public string TipoUsuario { get; set; }
     
-        public virtual Arrendador Arrendador { get; set; }
-        public virtual Conductor Conductor { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Brevete> Brevete { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Espacio> Espacio { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Vehiculo> Vehiculo { get; set; }
     }
 }

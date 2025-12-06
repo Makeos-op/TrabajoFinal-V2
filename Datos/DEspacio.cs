@@ -11,7 +11,7 @@ namespace Datos
         //Registro
         public string Registro(Espacio b)
         {
-            if (b?.Arrendador == null)
+            if (b == null)
             {
                 return "El conductor no puede ser nulo.";
             }
@@ -25,7 +25,7 @@ namespace Datos
         //Modificar
         public string Modificar(Espacio b)
         {
-            if (b?.IdArrendador == null)
+            if (b == null)
             {
                 return "El conductor no puede ser nulo.";
             }

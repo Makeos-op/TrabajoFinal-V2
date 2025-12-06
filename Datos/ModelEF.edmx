@@ -5,39 +5,25 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="ModelEF.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Arrendador">
-          <Key>
-            <PropertyRef Name="IdPersona" />
-          </Key>
-          <Property Name="IdPersona" Type="int" Nullable="false" />
-        </EntityType>
         <EntityType Name="Brevete">
           <Key>
             <PropertyRef Name="IdBrevete" />
           </Key>
           <Property Name="IdBrevete" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IdConductor" Type="int" Nullable="false" />
+          <Property Name="IdPersona" Type="int" Nullable="false" />
           <Property Name="Categoria" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="FechaEmision" Type="date" Nullable="false" />
           <Property Name="FechaCaducidad" Type="date" Nullable="false" />
-          <Property Name="Vigencia" Type="bit" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Conductor">
-          <Key>
-            <PropertyRef Name="IdPersona" />
-          </Key>
-          <Property Name="IdPersona" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Espacio">
           <Key>
             <PropertyRef Name="IdEspacio" />
           </Key>
           <Property Name="IdEspacio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IdArrendador" Type="int" Nullable="false" />
+          <Property Name="IdPersona" Type="int" Nullable="false" />
           <Property Name="TarifaHora" Type="decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="Ubicacion" Type="varchar" MaxLength="150" Nullable="false" />
-          <Property Name="Area" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Estado" Type="bit" Nullable="false" />
+          <Property Name="Valoracion" Type="int" />
         </EntityType>
         <EntityType Name="Persona">
           <Key>
@@ -51,7 +37,6 @@
           <Property Name="Nacionalidad" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Correo" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Telefono" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="Saldo" Type="decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="Contrasena" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="TipoUsuario" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
@@ -72,57 +57,32 @@
           </Key>
           <Property Name="IdVehiculo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Matricula" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="IdConductor" Type="int" Nullable="false" />
+          <Property Name="IdPersona" Type="int" Nullable="false" />
           <Property Name="Modelo" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Marca" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Color" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="LicenciaNecesaria" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <Association Name="FK_Arrendador_Persona">
+        <Association Name="FK_Brevete_Persona">
           <End Role="Persona" Type="Self.Persona" Multiplicity="1" />
-          <End Role="Arrendador" Type="Self.Arrendador" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Persona">
-              <PropertyRef Name="IdPersona" />
-            </Principal>
-            <Dependent Role="Arrendador">
-              <PropertyRef Name="IdPersona" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Brevete_Conductor">
-          <End Role="Conductor" Type="Self.Conductor" Multiplicity="1" />
           <End Role="Brevete" Type="Self.Brevete" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Conductor">
+            <Principal Role="Persona">
               <PropertyRef Name="IdPersona" />
             </Principal>
             <Dependent Role="Brevete">
-              <PropertyRef Name="IdConductor" />
+              <PropertyRef Name="IdPersona" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Conductor_Persona">
+        <Association Name="FK_Espacio_Persona">
           <End Role="Persona" Type="Self.Persona" Multiplicity="1" />
-          <End Role="Conductor" Type="Self.Conductor" Multiplicity="0..1" />
+          <End Role="Espacio" Type="Self.Espacio" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Persona">
               <PropertyRef Name="IdPersona" />
             </Principal>
-            <Dependent Role="Conductor">
-              <PropertyRef Name="IdPersona" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Espacio_Arrendador">
-          <End Role="Arrendador" Type="Self.Arrendador" Multiplicity="1" />
-          <End Role="Espacio" Type="Self.Espacio" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Arrendador">
-              <PropertyRef Name="IdPersona" />
-            </Principal>
             <Dependent Role="Espacio">
-              <PropertyRef Name="IdArrendador" />
+              <PropertyRef Name="IdPersona" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -150,40 +110,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Vehiculo_Conductor">
-          <End Role="Conductor" Type="Self.Conductor" Multiplicity="1" />
+        <Association Name="FK_Vehiculo_Persona">
+          <End Role="Persona" Type="Self.Persona" Multiplicity="1" />
           <End Role="Vehiculo" Type="Self.Vehiculo" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Conductor">
+            <Principal Role="Persona">
               <PropertyRef Name="IdPersona" />
             </Principal>
             <Dependent Role="Vehiculo">
-              <PropertyRef Name="IdConductor" />
+              <PropertyRef Name="IdPersona" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="ModelEFStoreContainer">
-          <EntitySet Name="Arrendador" EntityType="Self.Arrendador" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Brevete" EntityType="Self.Brevete" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Conductor" EntityType="Self.Conductor" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Espacio" EntityType="Self.Espacio" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Persona" EntityType="Self.Persona" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Reserva" EntityType="Self.Reserva" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Vehiculo" EntityType="Self.Vehiculo" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_Arrendador_Persona" Association="Self.FK_Arrendador_Persona">
+          <AssociationSet Name="FK_Brevete_Persona" Association="Self.FK_Brevete_Persona">
             <End Role="Persona" EntitySet="Persona" />
-            <End Role="Arrendador" EntitySet="Arrendador" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Brevete_Conductor" Association="Self.FK_Brevete_Conductor">
-            <End Role="Conductor" EntitySet="Conductor" />
             <End Role="Brevete" EntitySet="Brevete" />
           </AssociationSet>
-          <AssociationSet Name="FK_Conductor_Persona" Association="Self.FK_Conductor_Persona">
+          <AssociationSet Name="FK_Espacio_Persona" Association="Self.FK_Espacio_Persona">
             <End Role="Persona" EntitySet="Persona" />
-            <End Role="Conductor" EntitySet="Conductor" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Espacio_Arrendador" Association="Self.FK_Espacio_Arrendador">
-            <End Role="Arrendador" EntitySet="Arrendador" />
             <End Role="Espacio" EntitySet="Espacio" />
           </AssociationSet>
           <AssociationSet Name="FK_Reserva_Espacio" Association="Self.FK_Reserva_Espacio">
@@ -194,8 +144,8 @@
             <End Role="Vehiculo" EntitySet="Vehiculo" />
             <End Role="Reserva" EntitySet="Reserva" />
           </AssociationSet>
-          <AssociationSet Name="FK_Vehiculo_Conductor" Association="Self.FK_Vehiculo_Conductor">
-            <End Role="Conductor" EntitySet="Conductor" />
+          <AssociationSet Name="FK_Vehiculo_Persona" Association="Self.FK_Vehiculo_Persona">
+            <End Role="Persona" EntitySet="Persona" />
             <End Role="Vehiculo" EntitySet="Vehiculo" />
           </AssociationSet>
         </EntityContainer>
@@ -204,46 +154,27 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ModelEF" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Arrendador">
-          <Key>
-            <PropertyRef Name="IdPersona" />
-          </Key>
-          <Property Name="IdPersona" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Persona" Relationship="Self.FK_Arrendador_Persona" FromRole="Arrendador" ToRole="Persona" />
-          <NavigationProperty Name="Espacio" Relationship="Self.FK_Espacio_Arrendador" FromRole="Arrendador" ToRole="Espacio" />
-        </EntityType>
         <EntityType Name="Brevete">
           <Key>
             <PropertyRef Name="IdBrevete" />
           </Key>
           <Property Name="IdBrevete" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdConductor" Type="Int32" Nullable="false" />
+          <Property Name="IdPersona" Type="Int32" Nullable="false" />
           <Property Name="Categoria" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="FechaEmision" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="FechaCaducidad" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Vigencia" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="Conductor" Relationship="Self.FK_Brevete_Conductor" FromRole="Brevete" ToRole="Conductor" />
-        </EntityType>
-        <EntityType Name="Conductor">
-          <Key>
-            <PropertyRef Name="IdPersona" />
-          </Key>
-          <Property Name="IdPersona" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Brevete" Relationship="Self.FK_Brevete_Conductor" FromRole="Conductor" ToRole="Brevete" />
-          <NavigationProperty Name="Persona" Relationship="Self.FK_Conductor_Persona" FromRole="Conductor" ToRole="Persona" />
-          <NavigationProperty Name="Vehiculo" Relationship="Self.FK_Vehiculo_Conductor" FromRole="Conductor" ToRole="Vehiculo" />
+          <NavigationProperty Name="Persona" Relationship="Self.FK_Brevete_Persona" FromRole="Brevete" ToRole="Persona" />
         </EntityType>
         <EntityType Name="Espacio">
           <Key>
             <PropertyRef Name="IdEspacio" />
           </Key>
           <Property Name="IdEspacio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdArrendador" Type="Int32" Nullable="false" />
+          <Property Name="IdPersona" Type="Int32" Nullable="false" />
           <Property Name="TarifaHora" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="Ubicacion" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Area" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Estado" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="Arrendador" Relationship="Self.FK_Espacio_Arrendador" FromRole="Espacio" ToRole="Arrendador" />
+          <Property Name="Valoracion" Type="Int32" />
+          <NavigationProperty Name="Persona" Relationship="Self.FK_Espacio_Persona" FromRole="Espacio" ToRole="Persona" />
           <NavigationProperty Name="Reserva" Relationship="Self.FK_Reserva_Espacio" FromRole="Espacio" ToRole="Reserva" />
         </EntityType>
         <EntityType Name="Persona">
@@ -258,11 +189,11 @@
           <Property Name="Nacionalidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Correo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Saldo" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="Contrasena" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TipoUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Arrendador" Relationship="Self.FK_Arrendador_Persona" FromRole="Persona" ToRole="Arrendador" />
-          <NavigationProperty Name="Conductor" Relationship="Self.FK_Conductor_Persona" FromRole="Persona" ToRole="Conductor" />
+          <NavigationProperty Name="Brevete" Relationship="Self.FK_Brevete_Persona" FromRole="Persona" ToRole="Brevete" />
+          <NavigationProperty Name="Espacio" Relationship="Self.FK_Espacio_Persona" FromRole="Persona" ToRole="Espacio" />
+          <NavigationProperty Name="Vehiculo" Relationship="Self.FK_Vehiculo_Persona" FromRole="Persona" ToRole="Vehiculo" />
         </EntityType>
         <EntityType Name="Reserva">
           <Key>
@@ -283,71 +214,34 @@
           </Key>
           <Property Name="IdVehiculo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Matricula" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="IdConductor" Type="Int32" Nullable="false" />
+          <Property Name="IdPersona" Type="Int32" Nullable="false" />
           <Property Name="Modelo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Marca" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Color" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="LicenciaNecesaria" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Conductor" Relationship="Self.FK_Vehiculo_Conductor" FromRole="Vehiculo" ToRole="Conductor" />
+          <NavigationProperty Name="Persona" Relationship="Self.FK_Vehiculo_Persona" FromRole="Vehiculo" ToRole="Persona" />
           <NavigationProperty Name="Reserva" Relationship="Self.FK_Reserva_Vehiculo" FromRole="Vehiculo" ToRole="Reserva" />
         </EntityType>
-        <Association Name="FK_Arrendador_Persona">
+        <Association Name="FK_Brevete_Persona">
           <End Role="Persona" Type="Self.Persona" Multiplicity="1" />
-          <End Role="Arrendador" Type="Self.Arrendador" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Persona">
-              <PropertyRef Name="IdPersona" />
-            </Principal>
-            <Dependent Role="Arrendador">
-              <PropertyRef Name="IdPersona" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Espacio_Arrendador">
-          <End Role="Arrendador" Type="Self.Arrendador" Multiplicity="1" />
-          <End Role="Espacio" Type="Self.Espacio" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Arrendador">
-              <PropertyRef Name="IdPersona" />
-            </Principal>
-            <Dependent Role="Espacio">
-              <PropertyRef Name="IdArrendador" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Brevete_Conductor">
-          <End Role="Conductor" Type="Self.Conductor" Multiplicity="1" />
           <End Role="Brevete" Type="Self.Brevete" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Conductor">
+            <Principal Role="Persona">
               <PropertyRef Name="IdPersona" />
             </Principal>
             <Dependent Role="Brevete">
-              <PropertyRef Name="IdConductor" />
+              <PropertyRef Name="IdPersona" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Conductor_Persona">
+        <Association Name="FK_Espacio_Persona">
           <End Role="Persona" Type="Self.Persona" Multiplicity="1" />
-          <End Role="Conductor" Type="Self.Conductor" Multiplicity="0..1" />
+          <End Role="Espacio" Type="Self.Espacio" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Persona">
               <PropertyRef Name="IdPersona" />
             </Principal>
-            <Dependent Role="Conductor">
+            <Dependent Role="Espacio">
               <PropertyRef Name="IdPersona" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Vehiculo_Conductor">
-          <End Role="Conductor" Type="Self.Conductor" Multiplicity="1" />
-          <End Role="Vehiculo" Type="Self.Vehiculo" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Conductor">
-              <PropertyRef Name="IdPersona" />
-            </Principal>
-            <Dependent Role="Vehiculo">
-              <PropertyRef Name="IdConductor" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -360,6 +254,18 @@
             </Principal>
             <Dependent Role="Reserva">
               <PropertyRef Name="IdEspacio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vehiculo_Persona">
+          <End Role="Persona" Type="Self.Persona" Multiplicity="1" />
+          <End Role="Vehiculo" Type="Self.Vehiculo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Persona">
+              <PropertyRef Name="IdPersona" />
+            </Principal>
+            <Dependent Role="Vehiculo">
+              <PropertyRef Name="IdPersona" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -376,36 +282,26 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="BDEFEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Arrendador" EntityType="Self.Arrendador" />
           <EntitySet Name="Brevete" EntityType="Self.Brevete" />
-          <EntitySet Name="Conductor" EntityType="Self.Conductor" />
           <EntitySet Name="Espacio" EntityType="Self.Espacio" />
           <EntitySet Name="Persona" EntityType="Self.Persona" />
           <EntitySet Name="Reserva" EntityType="Self.Reserva" />
           <EntitySet Name="Vehiculo" EntityType="Self.Vehiculo" />
-          <AssociationSet Name="FK_Arrendador_Persona" Association="Self.FK_Arrendador_Persona">
+          <AssociationSet Name="FK_Brevete_Persona" Association="Self.FK_Brevete_Persona">
             <End Role="Persona" EntitySet="Persona" />
-            <End Role="Arrendador" EntitySet="Arrendador" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Espacio_Arrendador" Association="Self.FK_Espacio_Arrendador">
-            <End Role="Arrendador" EntitySet="Arrendador" />
-            <End Role="Espacio" EntitySet="Espacio" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Brevete_Conductor" Association="Self.FK_Brevete_Conductor">
-            <End Role="Conductor" EntitySet="Conductor" />
             <End Role="Brevete" EntitySet="Brevete" />
           </AssociationSet>
-          <AssociationSet Name="FK_Conductor_Persona" Association="Self.FK_Conductor_Persona">
+          <AssociationSet Name="FK_Espacio_Persona" Association="Self.FK_Espacio_Persona">
             <End Role="Persona" EntitySet="Persona" />
-            <End Role="Conductor" EntitySet="Conductor" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Vehiculo_Conductor" Association="Self.FK_Vehiculo_Conductor">
-            <End Role="Conductor" EntitySet="Conductor" />
-            <End Role="Vehiculo" EntitySet="Vehiculo" />
+            <End Role="Espacio" EntitySet="Espacio" />
           </AssociationSet>
           <AssociationSet Name="FK_Reserva_Espacio" Association="Self.FK_Reserva_Espacio">
             <End Role="Espacio" EntitySet="Espacio" />
             <End Role="Reserva" EntitySet="Reserva" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vehiculo_Persona" Association="Self.FK_Vehiculo_Persona">
+            <End Role="Persona" EntitySet="Persona" />
+            <End Role="Vehiculo" EntitySet="Vehiculo" />
           </AssociationSet>
           <AssociationSet Name="FK_Reserva_Vehiculo" Association="Self.FK_Reserva_Vehiculo">
             <End Role="Vehiculo" EntitySet="Vehiculo" />
@@ -418,29 +314,14 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="ModelEFStoreContainer" CdmEntityContainer="BDEFEntities">
-          <EntitySetMapping Name="Arrendador">
-            <EntityTypeMapping TypeName="ModelEF.Arrendador">
-              <MappingFragment StoreEntitySet="Arrendador">
-                <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Brevete">
             <EntityTypeMapping TypeName="ModelEF.Brevete">
               <MappingFragment StoreEntitySet="Brevete">
                 <ScalarProperty Name="IdBrevete" ColumnName="IdBrevete" />
-                <ScalarProperty Name="IdConductor" ColumnName="IdConductor" />
+                <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
                 <ScalarProperty Name="Categoria" ColumnName="Categoria" />
                 <ScalarProperty Name="FechaEmision" ColumnName="FechaEmision" />
                 <ScalarProperty Name="FechaCaducidad" ColumnName="FechaCaducidad" />
-                <ScalarProperty Name="Vigencia" ColumnName="Vigencia" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Conductor">
-            <EntityTypeMapping TypeName="ModelEF.Conductor">
-              <MappingFragment StoreEntitySet="Conductor">
-                <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -448,11 +329,10 @@
             <EntityTypeMapping TypeName="ModelEF.Espacio">
               <MappingFragment StoreEntitySet="Espacio">
                 <ScalarProperty Name="IdEspacio" ColumnName="IdEspacio" />
-                <ScalarProperty Name="IdArrendador" ColumnName="IdArrendador" />
+                <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
                 <ScalarProperty Name="TarifaHora" ColumnName="TarifaHora" />
                 <ScalarProperty Name="Ubicacion" ColumnName="Ubicacion" />
-                <ScalarProperty Name="Area" ColumnName="Area" />
-                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Valoracion" ColumnName="Valoracion" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -467,7 +347,6 @@
                 <ScalarProperty Name="Nacionalidad" ColumnName="Nacionalidad" />
                 <ScalarProperty Name="Correo" ColumnName="Correo" />
                 <ScalarProperty Name="Telefono" ColumnName="Telefono" />
-                <ScalarProperty Name="Saldo" ColumnName="Saldo" />
                 <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
                 <ScalarProperty Name="TipoUsuario" ColumnName="TipoUsuario" />
               </MappingFragment>
@@ -490,11 +369,10 @@
               <MappingFragment StoreEntitySet="Vehiculo">
                 <ScalarProperty Name="IdVehiculo" ColumnName="IdVehiculo" />
                 <ScalarProperty Name="Matricula" ColumnName="Matricula" />
-                <ScalarProperty Name="IdConductor" ColumnName="IdConductor" />
+                <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
                 <ScalarProperty Name="Modelo" ColumnName="Modelo" />
                 <ScalarProperty Name="Marca" ColumnName="Marca" />
                 <ScalarProperty Name="Color" ColumnName="Color" />
-                <ScalarProperty Name="LicenciaNecesaria" ColumnName="LicenciaNecesaria" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

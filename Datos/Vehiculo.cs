@@ -22,13 +22,12 @@ namespace Datos
     
         public int IdVehiculo { get; set; }
         public string Matricula { get; set; }
-        public int IdConductor { get; set; }
+        public int IdPersona { get; set; }
         public string Modelo { get; set; }
         public string Marca { get; set; }
         public string Color { get; set; }
-        public string LicenciaNecesaria { get; set; }
     
-        public virtual Conductor Conductor { get; set; }
+        public virtual Persona Persona { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Reserva> Reserva { get; set; }
     }

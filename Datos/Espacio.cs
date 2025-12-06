@@ -21,13 +21,12 @@ namespace Datos
         }
     
         public int IdEspacio { get; set; }
-        public int IdArrendador { get; set; }
+        public int IdPersona { get; set; }
         public decimal TarifaHora { get; set; }
         public string Ubicacion { get; set; }
-        public string Area { get; set; }
-        public bool Estado { get; set; }
+        public Nullable<int> Valoracion { get; set; }
     
-        public virtual Arrendador Arrendador { get; set; }
+        public virtual Persona Persona { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Reserva> Reserva { get; set; }
     }
