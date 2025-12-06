@@ -35,7 +35,7 @@ namespace Presentacion
                 return;
             }
 
-            int IdEspacio = int.Parse(dgReservaConductores.SelectedRows[0].Cells["IdPersona"].Value.ToString());
+            int IdEspacio = int.Parse(dgReservaConductores.SelectedRows[0].Cells["IdEspacio"].Value.ToString());
 
             Reserva reserva = new Reserva()
             {
@@ -46,7 +46,7 @@ namespace Presentacion
                 CantidadHoras = int.Parse(textBox1.Text)
             };
 
-            if (nReserva.Registro(reserva)!= "Reserva registrada correctamente.")
+            if (nReserva.Registro(reserva)== "Reserva registrada correctamente.")
             {
                 MessageBox.Show("La reserva se realizó con éxito.");
                 this.Close();

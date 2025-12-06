@@ -11,7 +11,7 @@ namespace Datos
         //Registro
         public string Registro(Reserva r)
         {
-            if (r?.Vehiculo==null || r?.Espacio== null)
+            if (r.IdVehiculo<=0 || r.IdEspacio<=0 )
             {
                 return "El vehiculo y/o reserva no puede ser nula.";
             }

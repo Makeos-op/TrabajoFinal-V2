@@ -114,9 +114,18 @@ namespace Datos
         {
             return EjecutarFuncion(bd =>
             {
-                bd.Configuration.LazyLoadingEnabled = false;
-                var reservas = bd.Reserva.Include("Espacio").Where(r => r.Espacio.IdPersona == id).ToList();
-                return reservas;
+                    bd.Configuration.LazyLoadingEnabled = false;
+                    // Primero obtener los espacios del arrendador
+                    var espaciosIds = bd.Espacio.Where(e => e.IdPersona == id).Select(e => e.IdEspacio).ToList();
+
+                    // Luego obtener las reservas que corresponden a esos espacios
+                    var reservas = bd.Reserva
+                        .Include("Espacio")
+                        .Include("Vehiculo")
+                        .Where(r => espaciosIds.Contains(r.IdEspacio))
+                        .ToList();
+
+                    return reservas;
             });
         }
     }
