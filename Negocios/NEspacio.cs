@@ -29,5 +29,9 @@ namespace Negocios
         {
             return dEspacio.BuscarEspacioPorId(Id);
         }
+        public List<Espacio> Listar()
+        {
+            return dEspacio.Listar();
+        }
     }
 }

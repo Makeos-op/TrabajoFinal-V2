@@ -28,29 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgReservaConductores = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.btnReservar = new System.Windows.Forms.Button();
+            this.btn_Reservar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgReservaConductores)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgReservaConductores
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(341, 32);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(508, 348);
-            this.dataGridView1.TabIndex = 26;
+            this.dgReservaConductores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgReservaConductores.Location = new System.Drawing.Point(341, 32);
+            this.dgReservaConductores.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgReservaConductores.Name = "dgReservaConductores";
+            this.dgReservaConductores.RowHeadersWidth = 51;
+            this.dgReservaConductores.RowTemplate.Height = 24;
+            this.dgReservaConductores.Size = new System.Drawing.Size(508, 348);
+            this.dgReservaConductores.TabIndex = 26;
             // 
             // label4
             // 
@@ -90,16 +90,17 @@
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker2.TabIndex = 32;
             // 
-            // btnReservar
+            // btn_Reservar
             // 
-            this.btnReservar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReservar.Location = new System.Drawing.Point(101, 326);
-            this.btnReservar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnReservar.Name = "btnReservar";
-            this.btnReservar.Size = new System.Drawing.Size(160, 28);
-            this.btnReservar.TabIndex = 33;
-            this.btnReservar.Text = "RESERVAR";
-            this.btnReservar.UseVisualStyleBackColor = true;
+            this.btn_Reservar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Reservar.Location = new System.Drawing.Point(101, 326);
+            this.btn_Reservar.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Reservar.Name = "btn_Reservar";
+            this.btn_Reservar.Size = new System.Drawing.Size(160, 28);
+            this.btn_Reservar.TabIndex = 33;
+            this.btn_Reservar.Text = "RESERVAR";
+            this.btn_Reservar.UseVisualStyleBackColor = true;
+            this.btn_Reservar.Click += new System.EventHandler(this.btn_Reservar_Click);
             // 
             // label1
             // 
@@ -136,7 +137,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(168, 273);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(132, 22);
             this.textBox1.TabIndex = 38;
@@ -150,16 +151,16 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnReservar);
+            this.Controls.Add(this.btn_Reservar);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgReservaConductores);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormReservaConductor";
             this.Text = "FormReservaConductores";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgReservaConductores)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,12 +168,12 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgReservaConductores;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Button btnReservar;
+        private System.Windows.Forms.Button btn_Reservar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label6;

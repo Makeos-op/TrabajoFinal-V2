@@ -34,5 +34,9 @@ namespace Negocios
         {
             return dArrendador.MostrarEspaciosPorArrendador(idArrendador);
         }
+        public List<Reserva> MostrarReservas(int id)
+        {
+            return dArrendador.MostrarReservas(id);
+        }
     }
 }

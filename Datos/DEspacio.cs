@@ -63,5 +63,12 @@ namespace Datos
                 return bd.Espacio.Find(Id);
             });
         }
+        public List<Espacio> Listar()
+        {
+            return EjecutarFuncion(bd =>
+            {
+                return bd.Espacio.Include("Arrendador.Persona").ToList();
+            });
+        }
     }
 }

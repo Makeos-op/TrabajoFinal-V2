@@ -24,7 +24,7 @@ namespace Presentacion
         private void btn_Registrar_Click(object sender, EventArgs e)
         {
             //Abrir formulario de registro de brevete
-            FormRegistroBrevete form = new FormRegistroBrevete();    //Logica de registro de brevete
+            FormRegistroBrevete form = new FormRegistroBrevete(usuario);    //Logica de registro de brevete
             //Mostrar Datos
         }
 

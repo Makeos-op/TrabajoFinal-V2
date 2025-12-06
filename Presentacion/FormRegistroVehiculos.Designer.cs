@@ -132,6 +132,7 @@
             this.btn_Salir.TabIndex = 10;
             this.btn_Salir.Text = "Salir";
             this.btn_Salir.UseVisualStyleBackColor = true;
+            this.btn_Salir.Click += new System.EventHandler(this.btn_Salir_Click);
             // 
             // Licencia
             // 
@@ -193,6 +194,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormRegistroVehiculos";
             this.Text = "FormVehiculo";
+            this.Load += new System.EventHandler(this.FormRegistroVehiculos_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

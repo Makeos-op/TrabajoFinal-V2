@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgVehiculos = new System.Windows.Forms.DataGridView();
             this.btn_Salir = new System.Windows.Forms.Button();
             this.btn_HacerReversas = new System.Windows.Forms.Button();
             this.btn_AgregarVehiculo = new System.Windows.Forms.Button();
@@ -37,7 +37,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgVehiculos)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -49,16 +49,16 @@
             this.label1.TabIndex = 24;
             this.label1.Text = "Id";
             // 
-            // dataGridView1
+            // dgVehiculos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(31, 213);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(511, 335);
-            this.dataGridView1.TabIndex = 25;
+            this.dgVehiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgVehiculos.Location = new System.Drawing.Point(31, 213);
+            this.dgVehiculos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgVehiculos.Name = "dgVehiculos";
+            this.dgVehiculos.RowHeadersWidth = 51;
+            this.dgVehiculos.RowTemplate.Height = 24;
+            this.dgVehiculos.Size = new System.Drawing.Size(511, 335);
+            this.dgVehiculos.TabIndex = 25;
             // 
             // btn_Salir
             // 
@@ -156,12 +156,12 @@
             this.Controls.Add(this.btn_Salir);
             this.Controls.Add(this.btn_HacerReversas);
             this.Controls.Add(this.btn_AgregarVehiculo);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgVehiculos);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormMenuConductor";
             this.Text = "FormConductor";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgVehiculos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,7 +169,7 @@
 
         #endregion
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgVehiculos;
         private System.Windows.Forms.Button btn_Salir;
         private System.Windows.Forms.Button btn_HacerReversas;
         private System.Windows.Forms.Button btn_AgregarVehiculo;

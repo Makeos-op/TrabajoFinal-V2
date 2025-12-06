@@ -87,5 +87,14 @@ namespace Datos
                 return bd.Espacio.Include("Arrendador").Where(e => e.IdArrendador == idArrendador).ToList();
             });
         }
+        public List<Reserva> MostrarReservas(int id)
+        {
+            return EjecutarFuncion(bd =>
+            {
+                bd.Configuration.LazyLoadingEnabled = false;
+                var reservas = bd.Reserva.Include("Espacio").Where(r => r.Espacio.IdArrendador == id).ToList();
+                return reservas;
+            });
+        }
     }
 }

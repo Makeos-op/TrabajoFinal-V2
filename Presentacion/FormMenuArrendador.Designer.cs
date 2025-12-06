@@ -28,24 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DgEspacios = new System.Windows.Forms.DataGridView();
             this.btn_AgregarEspacio = new System.Windows.Forms.Button();
             this.btn_VerReservas = new System.Windows.Forms.Button();
             this.btn_Salir = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgEspacios)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // DgEspacios
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(29, 97);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(480, 350);
-            this.dataGridView1.TabIndex = 3;
+            this.DgEspacios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgEspacios.Location = new System.Drawing.Point(29, 97);
+            this.DgEspacios.Margin = new System.Windows.Forms.Padding(4);
+            this.DgEspacios.Name = "DgEspacios";
+            this.DgEspacios.RowHeadersWidth = 51;
+            this.DgEspacios.Size = new System.Drawing.Size(480, 350);
+            this.DgEspacios.TabIndex = 3;
             // 
             // btn_AgregarEspacio
             // 
@@ -117,18 +117,18 @@
             this.Controls.Add(this.btn_Salir);
             this.Controls.Add(this.btn_VerReservas);
             this.Controls.Add(this.btn_AgregarEspacio);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DgEspacios);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormMenuArrendador";
             this.Text = "FormArrendador";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgEspacios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DgEspacios;
         private System.Windows.Forms.Button btn_AgregarEspacio;
         private System.Windows.Forms.Button btn_VerReservas;
         private System.Windows.Forms.Button btn_Salir;

@@ -26,6 +26,7 @@ namespace Datos
         public string Modelo { get; set; }
         public string Marca { get; set; }
         public string Color { get; set; }
+        public string LicenciaNecesaria { get; set; }
     
         public virtual Conductor Conductor { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

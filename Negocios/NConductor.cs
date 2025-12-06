@@ -38,5 +38,9 @@ namespace Negocios
         {
             return dConductor.MostrarBrevetes(id);
         }
+        public List<Reserva> MostrarReservas(int id)
+        {
+            return dConductor.MostrarReservas(id);
+        }
     }
 }

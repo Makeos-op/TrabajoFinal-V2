@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Negocios
 {
-    internal class NVehiculo
+    public class NVehiculo
     {
         private DVehiculo dVehiculo = new DVehiculo();
         //Registro

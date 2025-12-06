@@ -36,7 +36,7 @@
           <Property Name="IdArrendador" Type="int" Nullable="false" />
           <Property Name="TarifaHora" Type="decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="Ubicacion" Type="varchar" MaxLength="150" Nullable="false" />
-          <Property Name="Area" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Area" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Estado" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Persona">
@@ -76,6 +76,7 @@
           <Property Name="Modelo" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Marca" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Color" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LicenciaNecesaria" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <Association Name="FK_Arrendador_Persona">
           <End Role="Persona" Type="Self.Persona" Multiplicity="1" />
@@ -240,7 +241,7 @@
           <Property Name="IdArrendador" Type="Int32" Nullable="false" />
           <Property Name="TarifaHora" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="Ubicacion" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Area" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Area" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Estado" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Arrendador" Relationship="Self.FK_Espacio_Arrendador" FromRole="Espacio" ToRole="Arrendador" />
           <NavigationProperty Name="Reserva" Relationship="Self.FK_Reserva_Espacio" FromRole="Espacio" ToRole="Reserva" />
@@ -286,6 +287,7 @@
           <Property Name="Modelo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Marca" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Color" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LicenciaNecesaria" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Conductor" Relationship="Self.FK_Vehiculo_Conductor" FromRole="Vehiculo" ToRole="Conductor" />
           <NavigationProperty Name="Reserva" Relationship="Self.FK_Reserva_Vehiculo" FromRole="Vehiculo" ToRole="Reserva" />
         </EntityType>
@@ -492,6 +494,7 @@
                 <ScalarProperty Name="Modelo" ColumnName="Modelo" />
                 <ScalarProperty Name="Marca" ColumnName="Marca" />
                 <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="LicenciaNecesaria" ColumnName="LicenciaNecesaria" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

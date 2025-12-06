@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Negocios
 {
-    internal class NReserva
+    public class NReserva
     {
         private DReserva dReserva = new DReserva();
         //Registro

@@ -94,5 +94,16 @@ namespace Datos
                 return bd.Brevete.Where(b => b.IdConductor == id).ToList();
             });
         }
+        public List<Reserva> MostrarReservas(int id)
+        {
+            return EjecutarFuncion(bd =>
+            {
+                bd.Configuration.LazyLoadingEnabled = false;
+
+                var reservas = bd.Reserva.Include("Vehiculo").Where(r => r.Vehiculo.IdConductor == id).ToList();
+                return reservas;
+            });
+
+        }
     }       
 }

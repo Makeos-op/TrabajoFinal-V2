@@ -1,4 +1,5 @@
 ﻿using Datos;
+using Negocios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,10 +15,12 @@ namespace Presentacion
     public partial class FormReservaArrendador : Form
     {
         private Arrendador usuario = new Arrendador();
+        private NArrendador nArrendador = new NArrendador();
         public FormReservaArrendador(Arrendador usuarioIngresado)
         {
             InitializeComponent();
             usuario = usuarioIngresado;
+            UiHelper.Mostrar(dgReservasArrendador,nArrendador.MostrarReservas(usuario.IdPersona));
         }
 
         private void btn_Salir_Click(object sender, EventArgs e)

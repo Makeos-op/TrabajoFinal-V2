@@ -120,6 +120,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UiHelper.cs" />
     <EmbeddedResource Include="FormBrevetesConductor.resx">
       <DependentUpon>FormBrevetesConductor.cs</DependentUpon>
     </EmbeddedResource>

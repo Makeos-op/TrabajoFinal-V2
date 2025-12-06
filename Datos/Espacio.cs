@@ -24,7 +24,7 @@ namespace Datos
         public int IdArrendador { get; set; }
         public decimal TarifaHora { get; set; }
         public string Ubicacion { get; set; }
-        public decimal Area { get; set; }
+        public string Area { get; set; }
         public bool Estado { get; set; }
     
         public virtual Arrendador Arrendador { get; set; }

@@ -16,10 +16,12 @@ namespace Presentacion
     {
         private Conductor usuario = new Conductor();
         private NConductor nConductor = new NConductor();
+        private NVehiculo nVehiculo = new NVehiculo();
         public FormMenuConductor(Persona usuarioIngresado)
         {
             InitializeComponent();
             usuario = nConductor.ObtenerPorId(usuarioIngresado.IdPersona);
+            UiHelper.Mostrar(dgVehiculos, nConductor.MostraVehiculos(usuario.IdPersona));
         }
 
         private void btn_VerBrevete_Click(object sender, EventArgs e)
@@ -30,7 +32,13 @@ namespace Presentacion
 
         private void btn_HacerReversas_Click(object sender, EventArgs e)
         {
-            FormReservaConductor form = new FormReservaConductor(usuario);
+            if (dgVehiculos.SelectedRows.Count == 0) //Verifica si hay una fila seleccionada
+            {
+                MessageBox.Show("Seleccione un espacio para reservar");
+                return;
+            }
+            var vehiculo = nVehiculo.BuscarPorMatricula(dgVehiculos.SelectedRows[0].Cells["Matricula"].Value.ToString());
+            FormReservaConductor form = new FormReservaConductor(usuario,vehiculo);
             form.Show();
         }
 

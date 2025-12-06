@@ -13,13 +13,13 @@ namespace Datos
         {
             if (r?.Vehiculo==null || r?.Espacio== null)
             {
-                return "El vehiculo y/o reserva no puede ser nulo.";
+                return "El vehiculo y/o reserva no puede ser nula.";
             }
             return EjecutarFuncion(bd =>
             {
                 bd.Reserva.Add(r);
                 bd.SaveChanges();
-                return "Reserva registrado correctamente.";
+                return "Reserva registrada correctamente.";
             });
         }
         //Modificar
@@ -27,7 +27,7 @@ namespace Datos
         {
             if (r?.Vehiculo == null || r?.Espacio == null)
             {
-                return "El vehiculo y/o reserva no puede ser nulo.";
+                return "El vehiculo y/o reserva no puede ser nula.";
             }
             return EjecutarFuncion(bd =>
             {
@@ -38,7 +38,7 @@ namespace Datos
                 }
                 bd.Entry(reserva).CurrentValues.SetValues(r);
                 bd.SaveChanges();
-                return "Reserva modificado correctamente.";
+                return "Reserva modificada correctamente.";
             });
         }
         //Eliminar

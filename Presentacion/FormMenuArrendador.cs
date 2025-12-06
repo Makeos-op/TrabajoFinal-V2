@@ -20,6 +20,7 @@ namespace Presentacion
         {
             InitializeComponent();
             usuario = nArrendador.ObtenerPorId(usuarioIngresado.IdPersona);
+            UiHelper.Mostrar(DgEspacios, nArrendador.MostrarEspaciosPorArrendador(usuario.IdPersona));
         }
 
         private void btn_VerReservas_Click(object sender, EventArgs e)
