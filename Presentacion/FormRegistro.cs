@@ -14,8 +14,7 @@ namespace Presentacion
 {
     public partial class FormRegistro : Form
     {
-        private NArrendador nArrendador = new NArrendador();
-        private NConductor nConductor = new NConductor();
+        private NPersona nPersona = new NPersona();
         public FormRegistro()
         {
             InitializeComponent();
@@ -65,46 +64,11 @@ namespace Presentacion
                 Telefono = txttelefono.Text,
                 Contrasena = txtcontrasena.Text,
                 TipoUsuario = cmbtipoususario.Text,
-                Saldo = 0
             };
-            //Logica de registro
-            if (usuario.TipoUsuario == "Conductor")
+            if (nPersona.Registro(usuario)!= "Registro Exitoso")
             {
-                Conductor conductor = new Conductor
-                {
-                    Persona = usuario
-                };
-                nConductor.Registro(conductor);
-                MessageBox.Show("Usuario registrado exitosamente.",
-                                "Registro exitoso",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Information);
-                LimpiarCampos();
-                Close();
+                
             }
-            else if (usuario.TipoUsuario == "Arrendador")
-            {
-                Arrendador arrendador = new Arrendador
-                {
-                    Persona = usuario
-                };
-                try
-                {
-                    nArrendador.Registro(arrendador);
-                    MessageBox.Show("Usuario registrado exitosamente.",
-                                "Registro exitoso",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Information);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al registrar el usuario: " + ex.Message,
-                                "Error de registro",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
-                    LimpiarCampos();
-                    return;
-                }
                 LimpiarCampos();
                 Close();
             }

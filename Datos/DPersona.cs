@@ -10,7 +10,7 @@ namespace Datos
     {
         public string Registro(Persona u)
         {
-            EjecutarFuncion(bd =>
+            return EjecutarFuncion(bd =>
             {
                 if (bd.Persona.Any(p => p.Correo == u.Correo))
                 {
@@ -23,7 +23,7 @@ namespace Datos
         }
         public string Modificar(Persona u)
         {
-            EjecutarFuncion(bd =>
+            return EjecutarFuncion(bd =>
             {
                 var persona = bd.Persona.Find(u.IdPersona);
                 if (persona == null)
@@ -75,7 +75,7 @@ namespace Datos
             return EjecutarFuncion(bd =>
             {
                 bd.Configuration.LazyLoadingEnabled = false;
-                return bd.Conductor.Include("Persona").ToList();
+                return bd.Persona.ToList();
             });
         }
         public Persona ObtenerPorId(int idConductor)
@@ -83,7 +83,7 @@ namespace Datos
             return EjecutarFuncion(bd =>
             {
                 bd.Configuration.LazyLoadingEnabled = false;
-                return bd.Conductor.Include("Persona").FirstOrDefault(a => a.IdPersona == idConductor);
+                return bd.Persona.FirstOrDefault(a => a.IdPersona == idConductor);
             });
         }
         public List<Vehiculo> MostraVehiculos(int id)
@@ -91,7 +91,7 @@ namespace Datos
             return EjecutarFuncion(bd =>
             {
                 bd.Configuration.LazyLoadingEnabled = false;
-                return bd.Vehiculo.Where(v => v.IdConductor == id).ToList();
+                return bd.Vehiculo.Where(v => v.IdPersona == id).ToList();
             });
         }
         public List<Brevete> MostrarBrevetes(int id)
@@ -99,7 +99,7 @@ namespace Datos
             return EjecutarFuncion(bd =>
             {
                 bd.Configuration.LazyLoadingEnabled = false;
-                return bd.Brevete.Where(b => b.IdConductor == id).ToList();
+                return bd.Brevete.Where(b => b.IdPersona == id).ToList();
             });
         }
         public List<Espacio> MostrarEspacios(int idArrendador)
@@ -107,7 +107,7 @@ namespace Datos
             return EjecutarFuncion(bd =>
             {
                 bd.Configuration.LazyLoadingEnabled = false;
-                return bd.Espacio.Include("Arrendador").Where(e => e.IdArrendador == idArrendador).ToList();
+                return bd.Espacio.Include("Arrendador").Where(e => e.IdPersona == idArrendador).ToList();
             });
         }
         public List<Reserva> MostrarReservas(int id)
@@ -115,7 +115,7 @@ namespace Datos
             return EjecutarFuncion(bd =>
             {
                 bd.Configuration.LazyLoadingEnabled = false;
-                var reservas = bd.Reserva.Include("Espacio").Where(r => r.Espacio.IdArrendador == id).ToList();
+                var reservas = bd.Reserva.Include("Espacio").Where(r => r.Espacio.IdPersona == id).ToList();
                 return reservas;
             });
         }
