@@ -37,6 +37,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.btn_Reportes = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgVehiculos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,7 +64,7 @@
             // btn_Salir
             // 
             this.btn_Salir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Salir.Location = new System.Drawing.Point(201, 553);
+            this.btn_Salir.Location = new System.Drawing.Point(383, 552);
             this.btn_Salir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Salir.Name = "btn_Salir";
             this.btn_Salir.Size = new System.Drawing.Size(159, 49);
@@ -145,11 +146,24 @@
             this.label4.TabIndex = 32;
             this.label4.Text = "ver su brevete o hacer una reserva";
             // 
+            // btn_Reportes
+            // 
+            this.btn_Reportes.BackColor = System.Drawing.Color.OliveDrab;
+            this.btn_Reportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Reportes.Location = new System.Drawing.Point(30, 552);
+            this.btn_Reportes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Reportes.Name = "btn_Reportes";
+            this.btn_Reportes.Size = new System.Drawing.Size(165, 49);
+            this.btn_Reportes.TabIndex = 33;
+            this.btn_Reportes.Text = "Reportes";
+            this.btn_Reportes.UseVisualStyleBackColor = false;
+            // 
             // FormMenuConductor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(576, 609);
+            this.Controls.Add(this.btn_Reportes);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -178,5 +192,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btn_Reportes;
     }
 }

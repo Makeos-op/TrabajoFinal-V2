@@ -106,6 +106,18 @@
     <Compile Include="FormRegistroVehiculos.Designer.cs">
       <DependentUpon>FormRegistroVehiculos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormReporteArrendador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReporteArrendador.Designer.cs">
+      <DependentUpon>FormReporteArrendador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReporteConductor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReporteConductor.Designer.cs">
+      <DependentUpon>FormReporteConductor.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormReservaArrendador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +156,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormRegistroVehiculos.resx">
       <DependentUpon>FormRegistroVehiculos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReporteArrendador.resx">
+      <DependentUpon>FormReporteArrendador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReporteConductor.resx">
+      <DependentUpon>FormReporteConductor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormReservaArrendador.resx">
       <DependentUpon>FormReservaArrendador.cs</DependentUpon>

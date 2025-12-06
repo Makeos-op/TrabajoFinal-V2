@@ -79,5 +79,10 @@ namespace Presentacion
         {
             this.Close();
         }
+
+        private void btn_Reportes_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

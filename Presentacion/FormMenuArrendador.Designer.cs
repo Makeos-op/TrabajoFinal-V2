@@ -34,17 +34,18 @@
             this.btn_Salir = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btn_Reportes = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgEspacios)).BeginInit();
             this.SuspendLayout();
             // 
             // DgEspacios
             // 
             this.DgEspacios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgEspacios.Location = new System.Drawing.Point(29, 97);
+            this.DgEspacios.Location = new System.Drawing.Point(29, 160);
             this.DgEspacios.Margin = new System.Windows.Forms.Padding(4);
             this.DgEspacios.Name = "DgEspacios";
             this.DgEspacios.RowHeadersWidth = 51;
-            this.DgEspacios.Size = new System.Drawing.Size(480, 350);
+            this.DgEspacios.Size = new System.Drawing.Size(480, 287);
             this.DgEspacios.TabIndex = 3;
             // 
             // btn_AgregarEspacio
@@ -107,11 +108,25 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "Bienvenido arrendador, en esta sección podra agregar su espacio y ver su reserva";
             // 
+            // btn_Reportes
+            // 
+            this.btn_Reportes.BackColor = System.Drawing.Color.OliveDrab;
+            this.btn_Reportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Reportes.Location = new System.Drawing.Point(193, 105);
+            this.btn_Reportes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Reportes.Name = "btn_Reportes";
+            this.btn_Reportes.Size = new System.Drawing.Size(165, 49);
+            this.btn_Reportes.TabIndex = 34;
+            this.btn_Reportes.Text = "Reportes";
+            this.btn_Reportes.UseVisualStyleBackColor = false;
+            this.btn_Reportes.Click += new System.EventHandler(this.btn_Reportes_Click);
+            // 
             // FormMenuArrendador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(547, 539);
+            this.Controls.Add(this.btn_Reportes);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_Salir);
@@ -134,5 +149,6 @@
         private System.Windows.Forms.Button btn_Salir;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btn_Reportes;
     }
 }
