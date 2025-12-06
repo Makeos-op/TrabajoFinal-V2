@@ -19,8 +19,48 @@ namespace Presentacion
         public FormMenuArrendador(Persona usuarioIngresado)
         {
             InitializeComponent();
+
+            if (usuarioIngresado == null)
+            {
+                MessageBox.Show("Error: Usuario no válido",
+                                "Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                this.Close();
+                return;
+            }
+
+            // Obtener el arrendador completo desde la base de datos
             usuario = nArrendador.ObtenerPorId(usuarioIngresado.IdPersona);
-            UiHelper.Mostrar(DgEspacios, nArrendador.MostrarEspaciosPorArrendador(usuario.IdPersona));
+
+            if (usuario == null)
+            {
+                MessageBox.Show("Error al cargar los datos del arrendador",
+                                "Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                this.Close();
+                return;
+            }
+
+            // Cargar espacios del arrendador
+            CargarEspacios();
+        }
+
+        private void CargarEspacios()
+        {
+            try
+            {
+                var espacios = nArrendador.MostrarEspaciosPorArrendador(usuario.IdPersona);
+                UiHelper.Mostrar(DgEspacios, espacios);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar espacios: {ex.Message}",
+                                "Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
         }
 
         private void btn_VerReservas_Click(object sender, EventArgs e)

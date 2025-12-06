@@ -9,7 +9,7 @@ namespace Datos
     public class DConductor : AccesoBD
     {
         private readonly DPersona dPersona = new DPersona();
-        public string Registro(Conductor a)
+        public string Registro(Conductor a  )
         {
             if (a?.Persona == null)
             {

@@ -24,10 +24,10 @@ namespace Presentacion
             txtususario.Clear();
             txtcontrasenalogin.Clear();
         }
-
         private void btningresar_Click(object sender, EventArgs e)
         {
-            if (txtususario.Text == "" || txtcontrasenalogin.Text == "")
+            if (string.IsNullOrWhiteSpace(txtususario.Text) ||
+                string.IsNullOrWhiteSpace(txtcontrasenalogin.Text))
             {
                 MessageBox.Show("Por favor, complete todos los campos.",
                                 "Campos Vacíos",
@@ -35,50 +35,53 @@ namespace Presentacion
                                 MessageBoxIcon.Warning);
                 return;
             }
-            string correoIngresado;
-
-            try
+            string correoIngresado = txtususario.Text.Trim();
+            string contrasenaIngresada = txtcontrasenalogin.Text.Trim();
+            if (!nPersona.Validacion(correoIngresado, contrasenaIngresada))
             {
-                correoIngresado = txtususario.Text;
+                MessageBox.Show("Correo o contraseña incorrectos. Por favor, intente nuevamente.",
+                                "Error de inicio de sesión",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                LimpiarCampos();
+                return;
             }
-            catch (FormatException)
+            var usuario = nPersona.ObtenerPersona(correoIngresado, contrasenaIngresada);
+            if (usuario == null)
             {
-                MessageBox.Show("El formato del correo es inválido. Por favor, verifica e intenta nuevamente.",
-                                "Error de formato",
+                MessageBox.Show("Error al obtener los datos del usuario.",
+                                "Error",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
                 return;
             }
-            string contrasenaIngresada = txtcontrasenalogin.Text;
-            // Aquí iría la lógica para validar el usuario con el servicio correspondiente
-            if (nPersona.Validacion(correoIngresado,contrasenaIngresada))
-            {
-                MessageBox.Show("¡Inicio de sesión exitoso!",
-                                    "Bienvenido",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information);
-                LimpiarCampos();
-                var usuario = nPersona.ObtenerPersona(correoIngresado,contrasenaIngresada);
-                if ( usuario.TipoUsuario== "Conductor")
-                {
-                    FormMenuConductor formConductor = new FormMenuConductor(usuario);
-                    formConductor.Show();
-                }
-                else if (usuario.TipoUsuario == "Arrendador")
-                {
-                    FormMenuArrendador formArrendador = new FormMenuArrendador(usuario);
-                    formArrendador.Show();
-                }
-                else
-                {
-                    MessageBox.Show("Tipo de usuario no válido.",
-                                    "Error",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Error);
-                }
-            }
-            //Limpiar Campos
+
+            MessageBox.Show("¡Inicio de sesión exitoso!",
+                            "Bienvenido",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
             LimpiarCampos();
+            this.Hide();
+            if (usuario.TipoUsuario == "Conductor")
+            {
+                FormMenuConductor formConductor = new FormMenuConductor(usuario);
+                formConductor.FormClosed += (s, args) => this.Show(); 
+                formConductor.Show();
+            }
+            else if (usuario.TipoUsuario == "Arrendador")
+            {
+                FormMenuArrendador formArrendador = new FormMenuArrendador(usuario);
+                formArrendador.FormClosed += (s, args) => this.Show();
+                formArrendador.Show();
+            }
+            else
+            {
+                MessageBox.Show("Tipo de usuario no válido.",
+                                "Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                this.Show();
+            }
         }
 
         private void btnregistrarse_Click(object sender, EventArgs e)

@@ -20,8 +20,48 @@ namespace Presentacion
         public FormMenuConductor(Persona usuarioIngresado)
         {
             InitializeComponent();
+
+            if (usuarioIngresado == null)
+            {
+                MessageBox.Show("Error: Usuario no válido",
+                                "Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                this.Close();
+                return;
+            }
+
+            // Obtener el conductor completo desde la base de datos
             usuario = nConductor.ObtenerPorId(usuarioIngresado.IdPersona);
-            UiHelper.Mostrar(dgVehiculos, nConductor.MostraVehiculos(usuario.IdPersona));
+
+            if (usuario == null)
+            {
+                MessageBox.Show("Error al cargar los datos del conductor",
+                                "Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                this.Close();
+                return;
+            }
+
+            // Cargar vehículos del conductor
+            CargarVehiculos();
+        }
+
+        private void CargarVehiculos()
+        {
+            try
+            {
+                var vehiculos = nConductor.MostraVehiculos(usuario.IdPersona);
+                UiHelper.Mostrar(dgVehiculos, vehiculos);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar vehículos: {ex.Message}",
+                                "Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
         }
 
         private void btn_VerBrevete_Click(object sender, EventArgs e)
