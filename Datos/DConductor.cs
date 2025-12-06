@@ -9,7 +9,7 @@ namespace Datos
     public class DConductor : AccesoBD
     {
         private readonly DPersona dPersona = new DPersona();
-        public string Registro(Conductor a  )
+        public string Registro(Conductor a)
         {
             if (a?.Persona == null)
             {
@@ -93,17 +93,6 @@ namespace Datos
                 bd.Configuration.LazyLoadingEnabled = false;
                 return bd.Brevete.Where(b => b.IdConductor == id).ToList();
             });
-        }
-        public List<Reserva> MostrarReservas(int id)
-        {
-            return EjecutarFuncion(bd =>
-            {
-                bd.Configuration.LazyLoadingEnabled = false;
-
-                var reservas = bd.Reserva.Include("Vehiculo").Where(r => r.Vehiculo.IdConductor == id).ToList();
-                return reservas;
-            });
-
         }
     }       
 }

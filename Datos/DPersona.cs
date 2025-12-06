@@ -8,21 +8,14 @@ namespace Datos
 {
     public class DPersona:AccesoBD
     {
-        public string Registro(Persona u)
+        public string Registro(BDEFEntities bd,Persona u)
         {
-            return EjecutarFuncion(bd=>{ 
-             if (bd.Persona.Any(p => p.Correo == u.Correo))
-                {
-                    return "El correo ya está registrado";
-                }
-                bd.Persona.Add(u);
-                bd.SaveChanges();
-                return "Registro Exitoso";
-            });
+            bd.Persona.Add(u);
+            bd.SaveChanges();
+            return "Registro Exitoso";
         }
-        public string Modificar(Persona u)
+        public string Modificar(BDEFEntities bd, Persona u)
         {
-            return EjecutarFuncion(bd => {
             var persona = bd.Persona.Find(u.IdPersona);
             if (persona == null)
             {
@@ -30,9 +23,8 @@ namespace Datos
             }
             bd.Entry(persona).CurrentValues.SetValues(u);
             return "Modificación Exitosa";
-            });
         }
-        public string Eliminar(int IdPersona)
+        public string Eliminar(BDEFEntities bd, int IdPersona)
         {
             var persona = bd.Persona.Find(IdPersona);
             if (persona == null)
