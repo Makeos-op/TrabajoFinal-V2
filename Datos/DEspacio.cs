@@ -67,7 +67,7 @@ namespace Datos
         {
             return EjecutarFuncion(bd =>
             {
-                return bd.Espacio.Include("").ToList();
+                return bd.Espacio.Include("Persona").ToList();
             });
         }
     }
