@@ -32,8 +32,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.Modelo = new System.Windows.Forms.Label();
-            this.btn_Refrescar = new System.Windows.Forms.Button();
-            this.btn_Salir = new System.Windows.Forms.Button();
+            this.btn_Reporte3 = new System.Windows.Forms.Button();
+            this.btn_Reporte4 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -52,7 +52,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.label4.Location = new System.Drawing.Point(211, 30);
+            this.label4.Location = new System.Drawing.Point(177, 29);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(271, 34);
@@ -75,33 +75,33 @@
             this.Modelo.TabIndex = 51;
             this.Modelo.Text = "Modelo";
             // 
-            // btn_Refrescar
+            // btn_Reporte3
             // 
-            this.btn_Refrescar.BackColor = System.Drawing.Color.OliveDrab;
-            this.btn_Refrescar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Refrescar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btn_Refrescar.Location = new System.Drawing.Point(39, 176);
-            this.btn_Refrescar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_Refrescar.Name = "btn_Refrescar";
-            this.btn_Refrescar.Size = new System.Drawing.Size(165, 49);
-            this.btn_Refrescar.TabIndex = 49;
-            this.btn_Refrescar.Text = "Refrescar";
-            this.btn_Refrescar.UseVisualStyleBackColor = false;
+            this.btn_Reporte3.BackColor = System.Drawing.Color.OliveDrab;
+            this.btn_Reporte3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Reporte3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btn_Reporte3.Location = new System.Drawing.Point(52, 176);
+            this.btn_Reporte3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Reporte3.Name = "btn_Reporte3";
+            this.btn_Reporte3.Size = new System.Drawing.Size(165, 49);
+            this.btn_Reporte3.TabIndex = 49;
+            this.btn_Reporte3.Text = "Refrescar";
+            this.btn_Reporte3.UseVisualStyleBackColor = false;
             // 
-            // btn_Salir
+            // btn_Reporte4
             // 
-            this.btn_Salir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Salir.Location = new System.Drawing.Point(421, 182);
-            this.btn_Salir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_Salir.Name = "btn_Salir";
-            this.btn_Salir.Size = new System.Drawing.Size(148, 43);
-            this.btn_Salir.TabIndex = 48;
-            this.btn_Salir.Text = "Salir";
-            this.btn_Salir.UseVisualStyleBackColor = true;
+            this.btn_Reporte4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Reporte4.Location = new System.Drawing.Point(421, 182);
+            this.btn_Reporte4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Reporte4.Name = "btn_Reporte4";
+            this.btn_Reporte4.Size = new System.Drawing.Size(148, 43);
+            this.btn_Reporte4.TabIndex = 48;
+            this.btn_Reporte4.Text = "Salir";
+            this.btn_Reporte4.UseVisualStyleBackColor = true;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(463, 119);
+            this.textBox2.Location = new System.Drawing.Point(449, 119);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(120, 22);
             this.textBox2.TabIndex = 56;
@@ -109,7 +109,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(404, 122);
+            this.label1.Location = new System.Drawing.Point(385, 119);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 16);
             this.label1.TabIndex = 55;
@@ -124,8 +124,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.Modelo);
-            this.Controls.Add(this.btn_Refrescar);
-            this.Controls.Add(this.btn_Salir);
+            this.Controls.Add(this.btn_Reporte3);
+            this.Controls.Add(this.btn_Reporte4);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Name = "FormReporteArrendador";
@@ -140,8 +140,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label Modelo;
-        private System.Windows.Forms.Button btn_Refrescar;
-        private System.Windows.Forms.Button btn_Salir;
+        private System.Windows.Forms.Button btn_Reporte3;
+        private System.Windows.Forms.Button btn_Reporte4;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label1;
     }
