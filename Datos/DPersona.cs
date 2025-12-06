@@ -128,5 +128,55 @@ namespace Datos
                     return reservas;
             });
         }
+        public List<Reserva> ReservasPorRango(DateTime inicio, DateTime fin, int idConductor)
+        {
+
+            return EjecutarFuncion(bd =>
+            {
+                bd.Configuration.LazyLoadingEnabled = false;
+                var reservas = bd.Reserva.Include("Espacio").Include("Vehiculo")
+                 .Where(r => r.Fecha >= inicio &&
+                             r.Fecha <= fin &&
+                             r.Vehiculo.IdPersona == idConductor)
+                 .ToList();
+                return reservas;
+            });
+        }
+        public List<object> CantidadVehiculosPorTipo()
+        {
+            return EjecutarFuncion(bd => {
+                var query =
+                    bd.Vehiculo
+                      .GroupBy(v => v.Modelo)
+                      .Select(g => new
+                      {
+                          Tipo = g.Key,
+                          Cantidad = g.Count()
+                      }).ToList<object>();
+                return query;
+            });
+        }
+        public int TotalReservas()
+        {
+            return EjecutarFuncion(bd => {return bd.Reserva.Count(); });
+        }
+        public decimal GananciasDelDia(int idArrendador, DateTime fecha, decimal precioPorHora)
+        {
+            return EjecutarFuncion(bd => { 
+                var reservasHoy =
+                    bd.Reserva
+                      .Where(r => r.Fecha == fecha &&
+                                  r.Espacio.IdPersona == idArrendador)
+                      .ToList();
+
+                decimal total = 0;
+
+                foreach (var r in reservasHoy)
+                    total += r.CantidadHoras * precioPorHora;
+
+                return total;
+            });
+        }
+
     }
 }

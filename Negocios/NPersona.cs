@@ -54,5 +54,21 @@ namespace Negocios
         {
             return dPersona.MostrarReservas(id);
         }
+        public List<Reserva> ReservasPorRango(DateTime inicio, DateTime fin, int idConductor)
+        {
+            return dPersona.ReservasPorRango(inicio, fin, idConductor); 
+        }
+        public List<object> CantidadVehiculosPorTipo()
+        {
+            return dPersona.CantidadVehiculosPorTipo();
+        }
+        public int TotalReservas()
+        {
+            return dPersona.TotalReservas();
+        }
+        public decimal GananciasDelDia(int idArrendador, DateTime fecha, decimal precioPorHora)
+        {
+            return dPersona.GananciasDelDia(idArrendador, fecha, precioPorHora);
+        }
     }
 }
