@@ -28,12 +28,10 @@ namespace Presentacion
             string idText = txtidespacioalquilar.Text.Trim();
             string tarifaText = txttarifaporhora.Text.Trim();
             string ubicacion = txtubicacionalquilar.Text.Trim();
-            string areaText = txtareaalquilar.Text.Trim();
 
             if (string.IsNullOrWhiteSpace(idText) ||
                 string.IsNullOrWhiteSpace(tarifaText) ||
-                string.IsNullOrWhiteSpace(ubicacion) ||
-                string.IsNullOrWhiteSpace(areaText))
+                string.IsNullOrWhiteSpace(ubicacion))
             {
                 MessageBox.Show("Por favor, complete todos los campos antes de registrar.",
                                 "Campos vacíos",

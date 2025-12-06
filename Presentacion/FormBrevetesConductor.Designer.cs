@@ -28,26 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridViewBrete = new System.Windows.Forms.DataGridView();
+            this.dgBreveteMenu = new System.Windows.Forms.DataGridView();
             this.btn_Registrar = new System.Windows.Forms.Button();
             this.btn_Salir = new System.Windows.Forms.Button();
             this.btn_Refrescar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBrete)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgBreveteMenu)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridViewBrete
+            // dgBreveteMenu
             // 
-            this.dataGridViewBrete.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewBrete.Location = new System.Drawing.Point(41, 94);
-            this.dataGridViewBrete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridViewBrete.Name = "dataGridViewBrete";
-            this.dataGridViewBrete.RowHeadersWidth = 51;
-            this.dataGridViewBrete.RowTemplate.Height = 24;
-            this.dataGridViewBrete.Size = new System.Drawing.Size(588, 343);
-            this.dataGridViewBrete.TabIndex = 26;
+            this.dgBreveteMenu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgBreveteMenu.Location = new System.Drawing.Point(41, 94);
+            this.dgBreveteMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgBreveteMenu.Name = "dgBreveteMenu";
+            this.dgBreveteMenu.RowHeadersWidth = 51;
+            this.dgBreveteMenu.RowTemplate.Height = 24;
+            this.dgBreveteMenu.Size = new System.Drawing.Size(588, 343);
+            this.dgBreveteMenu.TabIndex = 26;
             // 
             // btn_Registrar
             // 
@@ -131,11 +131,11 @@
             this.Controls.Add(this.btn_Refrescar);
             this.Controls.Add(this.btn_Salir);
             this.Controls.Add(this.btn_Registrar);
-            this.Controls.Add(this.dataGridViewBrete);
+            this.Controls.Add(this.dgBreveteMenu);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormBrevetesConductor";
             this.Text = "FormBreveteMenu";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBrete)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgBreveteMenu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -143,7 +143,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridViewBrete;
+        private System.Windows.Forms.DataGridView dgBreveteMenu;
         private System.Windows.Forms.Button btn_Registrar;
         private System.Windows.Forms.Button btn_Salir;
         private System.Windows.Forms.Button btn_Refrescar;

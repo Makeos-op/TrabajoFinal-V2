@@ -35,7 +35,7 @@ namespace Presentacion
                 return;
             }
 
-            int IdEspacio = int.Parse(dgReservaConductores.SelectedRows[0].Cells["Id"].Value.ToString());
+            int IdEspacio = int.Parse(dgReservaConductores.SelectedRows[0].Cells["IdPersona"].Value.ToString());
 
             Reserva reserva = new Reserva()
             {

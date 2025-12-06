@@ -107,7 +107,7 @@ namespace Datos
             return EjecutarFuncion(bd =>
             {
                 bd.Configuration.LazyLoadingEnabled = false;
-                return bd.Espacio.Include("Arrendador").Where(e => e.IdPersona == idArrendador).ToList();
+                return bd.Espacio.Where(e => e.IdPersona == idArrendador).ToList();
             });
         }
         public List<Reserva> MostrarReservas(int id)
@@ -119,6 +119,5 @@ namespace Datos
                 return reservas;
             });
         }
-
     }
 }

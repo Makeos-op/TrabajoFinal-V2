@@ -42,7 +42,6 @@ namespace Presentacion
                 this.Close();
                 return;
             }
-
             // Cargar espacios del arrendador
             CargarEspacios();
         }

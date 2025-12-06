@@ -73,12 +73,12 @@
             // dataGridViewBrete
             // 
             this.dataGridViewBrete.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewBrete.Location = new System.Drawing.Point(53, 107);
+            this.dataGridViewBrete.Location = new System.Drawing.Point(53, 140);
             this.dataGridViewBrete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewBrete.Name = "dataGridViewBrete";
             this.dataGridViewBrete.RowHeadersWidth = 51;
             this.dataGridViewBrete.RowTemplate.Height = 24;
-            this.dataGridViewBrete.Size = new System.Drawing.Size(588, 343);
+            this.dataGridViewBrete.Size = new System.Drawing.Size(588, 310);
             this.dataGridViewBrete.TabIndex = 34;
             // 
             // label4
