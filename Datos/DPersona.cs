@@ -115,10 +115,7 @@ namespace Datos
             return EjecutarFuncion(bd =>
             {
                     bd.Configuration.LazyLoadingEnabled = false;
-                    // Primero obtener los espacios del arrendador
                     var espaciosIds = bd.Espacio.Where(e => e.IdPersona == id).Select(e => e.IdEspacio).ToList();
-
-                    // Luego obtener las reservas que corresponden a esos espacios
                     var reservas = bd.Reserva
                         .Include("Espacio")
                         .Include("Vehiculo")
@@ -142,37 +139,35 @@ namespace Datos
                 return reservas;
             });
         }
-        public List<object> CantidadVehiculosPorTipo()
+        public List<Reporte2> CantidadVehiculosPorTipo()
         {
             return EjecutarFuncion(bd => {
-                var query =
-                    bd.Vehiculo
-                      .GroupBy(v => v.Modelo)
-                      .Select(g => new
-                      {
-                          Tipo = g.Key,
-                          Cantidad = g.Count()
-                      }).ToList<object>();
-                return query;
+                return bd.Vehiculo
+                         .GroupBy(v => v.Marca)
+                         .Select(g => new Reporte2
+                         {
+                             Marca = g.Key,
+                             Cantidad = g.Count()
+                         }).ToList();
             });
         }
+
         public int TotalReservas()
         {
             return EjecutarFuncion(bd => {return bd.Reserva.Count(); });
         }
-        public decimal GananciasDelDia(int idArrendador, DateTime fecha, decimal precioPorHora)
+        public decimal GananciasDelDia(int idArrendador, DateTime fecha)
         {
-            return EjecutarFuncion(bd => { 
-                var reservasHoy =
-                    bd.Reserva
-                      .Where(r => r.Fecha == fecha &&
-                                  r.Espacio.IdPersona == idArrendador)
-                      .ToList();
+            return EjecutarFuncion(bd => {
+                var reservasHoy = bd.Reserva
+            .Where(r => r.Fecha == fecha &&
+                        r.Espacio.IdPersona == idArrendador)
+            .ToList();
 
                 decimal total = 0;
 
                 foreach (var r in reservasHoy)
-                    total += r.CantidadHoras * precioPorHora;
+                    total += r.CantidadHoras * r.Espacio.TarifaHora;
 
                 return total;
             });

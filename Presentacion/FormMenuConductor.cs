@@ -92,5 +92,11 @@ namespace Presentacion
         {
             this.Close();
         }
+
+        private void btn_Reportes_Click(object sender, EventArgs e)
+        {
+            FormReporteConductor form = new FormReporteConductor(usuario);
+            form.Show();
+        }
     }
 }

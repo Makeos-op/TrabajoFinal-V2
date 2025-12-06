@@ -81,7 +81,8 @@ namespace Presentacion
 
         private void btn_Reportes_Click(object sender, EventArgs e)
         {
-
+            FormReporteArrendador form = new FormReporteArrendador(usuario);
+            form.Show();
         }
     }
 }

@@ -82,14 +82,14 @@
             this.btn_Refrescar.BackColor = System.Drawing.Color.OliveDrab;
             this.btn_Refrescar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Refrescar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btn_Refrescar.Location = new System.Drawing.Point(27, 526);
+            this.btn_Refrescar.Location = new System.Drawing.Point(46, 523);
             this.btn_Refrescar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Refrescar.Name = "btn_Refrescar";
             this.btn_Refrescar.Size = new System.Drawing.Size(165, 49);
             this.btn_Refrescar.TabIndex = 37;
             this.btn_Refrescar.Text = "Refrescar";
             this.btn_Refrescar.UseVisualStyleBackColor = false;
-            this.btn_Refrescar.Click += new System.EventHandler(this.btn_Refrescar_Click);
+            this.btn_Refrescar.Click += new System.EventHandler(this.btn_Refrescar_Click_1);
             // 
             // btn_Salir
             // 
@@ -148,9 +148,9 @@
             this.Modelo.AutoSize = true;
             this.Modelo.Location = new System.Drawing.Point(13, 338);
             this.Modelo.Name = "Modelo";
-            this.Modelo.Size = new System.Drawing.Size(53, 16);
+            this.Modelo.Size = new System.Drawing.Size(45, 16);
             this.Modelo.TabIndex = 44;
-            this.Modelo.Text = "Modelo";
+            this.Modelo.Text = "Marca";
             // 
             // textBox1
             // 
@@ -189,6 +189,7 @@
             this.btn_Reporte1.TabIndex = 51;
             this.btn_Reporte1.Text = "Ejecutar Reporte 1";
             this.btn_Reporte1.UseVisualStyleBackColor = false;
+            this.btn_Reporte1.Click += new System.EventHandler(this.btn_Reporte1_Click);
             // 
             // btn_Reporte2
             // 
@@ -200,6 +201,7 @@
             this.btn_Reporte2.TabIndex = 50;
             this.btn_Reporte2.Text = "Ejecutar Reporte 2";
             this.btn_Reporte2.UseVisualStyleBackColor = true;
+            this.btn_Reporte2.Click += new System.EventHandler(this.btn_Reporte2_Click);
             // 
             // FormReporteConductor
             // 

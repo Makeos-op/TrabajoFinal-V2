@@ -84,6 +84,7 @@
       <DependentUpon>ModelEF.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reporte2.cs" />
     <Compile Include="Reserva.cs">
       <DependentUpon>ModelEF.tt</DependentUpon>
     </Compile>

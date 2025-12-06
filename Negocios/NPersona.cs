@@ -58,17 +58,18 @@ namespace Negocios
         {
             return dPersona.ReservasPorRango(inicio, fin, idConductor); 
         }
-        public List<object> CantidadVehiculosPorTipo()
+        public List<Reporte2> CantidadVehiculosPorTipo()
         {
-            return dPersona.CantidadVehiculosPorTipo();
+           return dPersona.CantidadVehiculosPorTipo();
         }
+
         public int TotalReservas()
         {
             return dPersona.TotalReservas();
         }
-        public decimal GananciasDelDia(int idArrendador, DateTime fecha, decimal precioPorHora)
+        public decimal GananciasDelDia(int idArrendador, DateTime fecha)
         {
-            return dPersona.GananciasDelDia(idArrendador, fecha, precioPorHora);
+            return dPersona.GananciasDelDia(idArrendador, fecha);
         }
     }
 }

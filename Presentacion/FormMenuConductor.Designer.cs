@@ -157,6 +157,7 @@
             this.btn_Reportes.TabIndex = 33;
             this.btn_Reportes.Text = "Reportes";
             this.btn_Reportes.UseVisualStyleBackColor = false;
+            this.btn_Reportes.Click += new System.EventHandler(this.btn_Reportes_Click);
             // 
             // FormMenuConductor
             // 
