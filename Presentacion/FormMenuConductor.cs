@@ -87,5 +87,10 @@ namespace Presentacion
             FormRegistroVehiculos form = new FormRegistroVehiculos(usuario);
             form.Show();
         }
+
+        private void btn_Salir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

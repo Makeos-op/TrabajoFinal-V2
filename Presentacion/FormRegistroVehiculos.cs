@@ -22,7 +22,12 @@ namespace Presentacion
             usuario = usuarioIngresado;
         }
 
-        private void FormRegistroVehiculos_Load(object sender, EventArgs e)
+        private void btn_Salir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
         {
             if (tbMatricula.Text == "" || tbModelo.Text == "" || tbMarca.Text == "" || tbColor.Text == "" || comboBox1.Text == "")
             {
@@ -52,11 +57,6 @@ namespace Presentacion
                                 "Éxito",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Information);
-            this.Close();
-        }
-
-        private void btn_Salir_Click(object sender, EventArgs e)
-        {
             this.Close();
         }
     }

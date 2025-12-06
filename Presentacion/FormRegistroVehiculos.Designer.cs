@@ -121,6 +121,7 @@
             this.btnRegistrar.TabIndex = 9;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // btn_Salir
             // 
@@ -194,7 +195,6 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormRegistroVehiculos";
             this.Text = "FormVehiculo";
-            this.Load += new System.EventHandler(this.FormRegistroVehiculos_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
