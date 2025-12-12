@@ -37,6 +37,7 @@
             this.btn_Reportes = new System.Windows.Forms.Button();
             this.btn_GestionarEspacio = new System.Windows.Forms.Button();
             this.btn_MiCuenta = new System.Windows.Forms.Button();
+            this.btn_Refrescar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgEspacios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,7 +68,7 @@
             // 
             this.btn_VerReservas.BackColor = System.Drawing.Color.OliveDrab;
             this.btn_VerReservas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_VerReservas.Location = new System.Drawing.Point(379, 468);
+            this.btn_VerReservas.Location = new System.Drawing.Point(313, 468);
             this.btn_VerReservas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_VerReservas.Name = "btn_VerReservas";
             this.btn_VerReservas.Size = new System.Drawing.Size(155, 49);
@@ -79,7 +80,7 @@
             // btn_Salir
             // 
             this.btn_Salir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Salir.Location = new System.Drawing.Point(205, 468);
+            this.btn_Salir.Location = new System.Drawing.Point(171, 468);
             this.btn_Salir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Salir.Name = "btn_Salir";
             this.btn_Salir.Size = new System.Drawing.Size(136, 49);
@@ -147,11 +148,26 @@
             this.btn_MiCuenta.UseVisualStyleBackColor = false;
             this.btn_MiCuenta.Click += new System.EventHandler(this.btn_MiCuenta_Click);
             // 
+            // btn_Refrescar
+            // 
+            this.btn_Refrescar.BackColor = System.Drawing.Color.OliveDrab;
+            this.btn_Refrescar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Refrescar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btn_Refrescar.Location = new System.Drawing.Point(474, 468);
+            this.btn_Refrescar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Refrescar.Name = "btn_Refrescar";
+            this.btn_Refrescar.Size = new System.Drawing.Size(64, 49);
+            this.btn_Refrescar.TabIndex = 38;
+            this.btn_Refrescar.Text = "R";
+            this.btn_Refrescar.UseVisualStyleBackColor = false;
+            this.btn_Refrescar.Click += new System.EventHandler(this.btn_Refrescar_Click);
+            // 
             // FormMenuArrendador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(559, 539);
+            this.Controls.Add(this.btn_Refrescar);
             this.Controls.Add(this.btn_Reportes);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -180,5 +196,6 @@
         private System.Windows.Forms.Button btn_Reportes;
         private System.Windows.Forms.Button btn_GestionarEspacio;
         private System.Windows.Forms.Button btn_MiCuenta;
+        private System.Windows.Forms.Button btn_Refrescar;
     }
 }

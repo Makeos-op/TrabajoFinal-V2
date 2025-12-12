@@ -40,6 +40,7 @@
             this.btn_Reportes = new System.Windows.Forms.Button();
             this.btn_GestionarVehiculo = new System.Windows.Forms.Button();
             this.btn_MiCuenta = new System.Windows.Forms.Button();
+            this.btn_Refrescar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgVehiculos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -185,11 +186,26 @@
             this.btn_MiCuenta.UseVisualStyleBackColor = false;
             this.btn_MiCuenta.Click += new System.EventHandler(this.btn_MiCuenta_Click);
             // 
+            // btn_Refrescar
+            // 
+            this.btn_Refrescar.BackColor = System.Drawing.Color.OliveDrab;
+            this.btn_Refrescar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Refrescar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btn_Refrescar.Location = new System.Drawing.Point(307, 94);
+            this.btn_Refrescar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Refrescar.Name = "btn_Refrescar";
+            this.btn_Refrescar.Size = new System.Drawing.Size(59, 42);
+            this.btn_Refrescar.TabIndex = 39;
+            this.btn_Refrescar.Text = "R";
+            this.btn_Refrescar.UseVisualStyleBackColor = false;
+            this.btn_Refrescar.Click += new System.EventHandler(this.btn_Refrescar_Click);
+            // 
             // FormMenuConductor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(576, 609);
+            this.Controls.Add(this.btn_Refrescar);
             this.Controls.Add(this.btn_Reportes);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -224,5 +240,6 @@
         private System.Windows.Forms.Button btn_Reportes;
         private System.Windows.Forms.Button btn_GestionarVehiculo;
         private System.Windows.Forms.Button btn_MiCuenta;
+        private System.Windows.Forms.Button btn_Refrescar;
     }
 }

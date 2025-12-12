@@ -70,7 +70,7 @@ namespace Presentacion
                 MessageBox.Show("La fecha de caducidad no tiene un formato válido. (Ejemplo: 24/10/2030)",
                                 "Error de formato",
                                 MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
+                                MessageBoxIcon.Error)   ;
                 return;
             }
 

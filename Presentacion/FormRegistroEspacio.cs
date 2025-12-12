@@ -25,31 +25,52 @@ namespace Presentacion
 
         private void btn_Registrar_Click(object sender, EventArgs e)
         {
-            string idText = txtidespacioalquilar.Text.Trim();
-            string tarifaText = txttarifaporhora.Text.Trim();
-            string ubicacion = txtubicacionalquilar.Text.Trim();
-
-            if (string.IsNullOrWhiteSpace(idText) ||
-                string.IsNullOrWhiteSpace(tarifaText) ||
-                string.IsNullOrWhiteSpace(ubicacion))
+            string idText, tarifaText, ubicacion;
+            bool flowControl = ValidacionVacio(out idText, out tarifaText, out ubicacion);
+            if (!flowControl)
             {
-                MessageBox.Show("Por favor, complete todos los campos antes de registrar.",
-                                "Campos vacíos",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Warning);
                 return;
             }
 
             int id;
             decimal tarifa;
+            bool flow = Validacion(idText, tarifaText, out id, out tarifa);
+            if (!flow)
+            {
+                return;
+            }
+            Espacio espacio = new Espacio();
+            {
+                espacio.IdPersona = usuario.IdPersona;
+                espacio.TarifaHora = tarifa;
+                espacio.Ubicacion = ubicacion;
+                espacio.IdEspacio = id;
+            }
+            if (nEspacio.Registro(espacio) != "Espacio registrado correctamente.")
+            {
+                MessageBox.Show("Error en el registro",
+                            "Error de registro",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                return;
+            }
+            MessageBox.Show("Espacio registrado con éxito.",
+                            "Registro exitoso",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+            this.Close();
+        }
 
+        private static bool Validacion(string idText, string tarifaText, out int id, out decimal tarifa)
+        {
+            tarifa = 0;
             if (!int.TryParse(idText, out id))
             {
                 MessageBox.Show("El ID debe ser un número entero válido.",
                                 "Error de formato",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
-                return;
+                return false;
             }
 
             if (!decimal.TryParse(tarifaText, out tarifa))
@@ -58,7 +79,7 @@ namespace Presentacion
                                 "Error de formato",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
-                return;
+                return false;
             }
 
 
@@ -68,28 +89,29 @@ namespace Presentacion
                                 "Valor inválido",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Warning);
-                return;
+                return false;
             }
-            Espacio espacio = new Espacio();
+
+            return true;
+        }
+
+        private bool ValidacionVacio(out string idText, out string tarifaText, out string ubicacion)
+        {
+            idText = txtidespacioalquilar.Text.Trim();
+            tarifaText = txttarifaporhora.Text.Trim();
+            ubicacion = txtubicacionalquilar.Text.Trim();
+            if (string.IsNullOrWhiteSpace(idText) ||
+                string.IsNullOrWhiteSpace(tarifaText) ||
+                string.IsNullOrWhiteSpace(ubicacion))
             {
-                espacio.IdPersona= usuario.IdPersona;
-                espacio.TarifaHora = tarifa;
-                espacio.Ubicacion = ubicacion;
-                espacio.IdEspacio= id;
+                MessageBox.Show("Por favor, complete todos los campos antes de registrar.",
+                                "Campos vacíos",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+                return false;
             }
-            if (nEspacio.Registro(espacio) != "Espacio registrado correctamente.")
-            {
-                MessageBox.Show("Error en el registro",
-                                                "Error de registro",
-                                                MessageBoxButtons.OK,
-                                                MessageBoxIcon.Error);
-                return;
-            }
-            MessageBox.Show("Brevete registrado con éxito.",
-                            "Registro exitoso",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Information);
-            this.Close();
+
+            return true;
         }
     }
 }

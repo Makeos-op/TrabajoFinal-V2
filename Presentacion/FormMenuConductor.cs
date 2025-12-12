@@ -68,18 +68,6 @@ namespace Presentacion
             form.Show();
         }
 
-        private void btn_HacerReversas_Click(object sender, EventArgs e)
-        {
-            if (dgVehiculos.SelectedRows.Count == 0) 
-            {
-                MessageBox.Show("Seleccione un vehiculo para hacer la reservar");
-                return;
-            }
-            var vehiculo = nVehiculo.BuscarPorMatricula(dgVehiculos.SelectedRows[0].Cells["Matricula"].Value.ToString());
-            FormReservaConductor form = new FormReservaConductor(usuario,vehiculo);
-            form.Show();
-        }
-
         private void btn_AgregarVehiculo_Click(object sender, EventArgs e)
         {
             FormRegistroVehiculos form = new FormRegistroVehiculos(usuario);
@@ -157,7 +145,19 @@ namespace Presentacion
 
         private void btn_HacerReversas_Click_1(object sender, EventArgs e)
         {
+            if (dgVehiculos.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Seleccione un vehiculo para hacer la reservar");
+                return;
+            }
+            var vehiculo = nVehiculo.BuscarPorMatricula(dgVehiculos.SelectedRows[0].Cells["Matricula"].Value.ToString());
+            FormReservaConductor form = new FormReservaConductor(usuario, vehiculo);
+            form.Show();
+        }
 
+        private void btn_Refrescar_Click(object sender, EventArgs e)
+        {
+            CargarVehiculos();
         }
     }
 }

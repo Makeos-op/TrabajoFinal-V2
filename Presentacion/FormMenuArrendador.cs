@@ -142,5 +142,10 @@ namespace Presentacion
                 MessageBox.Show($"Error: {ex.Message}");
             }
         }
+
+        private void btn_Refrescar_Click(object sender, EventArgs e)
+        {
+            CargarEspacios();
+        }
     }
 }

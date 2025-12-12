@@ -18,5 +18,11 @@ namespace Presentacion
 
             grid.DataSource = lista;
         }
+        public static void MensajesPOPUP()
+        {
+            //Recibir funcion de Negocio 
+            //Formatearlo Apropiadamente (Error Icono de error, aprobado icono aprobado, etc.)
+            //3 tipos de formato
+        }
     }
 }
